@@ -5,9 +5,7 @@
 <head>
   <meta charset="utf-8">
   
-  <meta property="og:title" content="Portrait-Undistort"/>
-  <meta property="og:url" content="TODO: "/>
-  <!-- <meta property="og:image" content="static/images/og_tag_header_image.jpg" /> -->
+  <meta property="og:title" content="Portrait-Disco"/>
   <meta property="og:image:width" content="1200"/>
   <meta property="og:image:height" content="630"/>
 
@@ -70,8 +68,6 @@
           </div>
           
           <div class="is-size-3 publication-authors">
-            <!-- span class="author-block"> </span> 
-            <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span> -->
           </div>
 
           <div class="column has-text-centered">
@@ -87,6 +83,8 @@
                 </a>
               </span>
               
+          
+           
             </div>
           </div>
 
@@ -98,8 +96,304 @@
 
 
 
-<hr/>
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <div class="container">
+      <div class="item">
+      <div class="column is-centered has-text-centered">
+        <img src="static/images/teaser.png" alt="TODO:"/>
+      
+      <h2 class="subtitle">
+	Portrait photos captured from a near-range distance often suffer from undesired perspective distortions. Our approach corrects these perspective distortions and synthesizes more pleasant views by <I>virtually</I> enlarging the focal length and the camera-to-subject distance. 
+      </h2>
+	  </div>
+    </div>
+  </div>
+  </div>
+  </div>
+</section>
 
+<section class="hero is-dark is-small">
+  <div class="hero-body">
+    <div class="container has-text-centered">
+      <div id="results-carousel" class="carousel results-carousel">
+
+        <div>
+          <div class="results-item">
+            <video poster="" id="espresso-rgb" autoplay controls muted loop playsinline width="40%">
+              <source src="./static/videos/tp0-MSBXWE_ours_False.mp4"
+                      type="video/mp4">
+            </video>
+            <video poster="" id="espresso-depth" autoplay controls muted loop playsinline width="40%">
+              <source src="./static/videos/tp0-MSBXWE_ours_True.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+        </div>
+
+        <div>
+          <div class="results-item">
+            <video poster="" id="split-cookie-rgb" autoplay controls muted loop playsinline width="40%">
+              <source src="./static/videos/tp4-DOEGEL_ours_False.mp4"
+                      type="video/mp4">
+            </video>
+            <video poster="" id="split-cookie-depth" autoplay controls muted loop playsinline width="40%">
+              <source src="./static/videos/tp4-DOEGEL_ours_True.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+        </div>
+
+        <div>
+          <div class="results-item">
+            <video poster="" id="3dprinter-rgb" autoplay controls muted loop playsinline width="40%">
+              <source src="./static/videos/np9-EYBFBI_ours_False.mp4"
+                      type="video/mp4">
+            </video>
+            <video poster="" id="3dprinter-depth" autoplay controls muted loop playsinline width="40%">
+              <source src="./static/videos/np9-EYBFBI_ours_True.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+        </div>
+
+        <div>
+          <div class="results-item">
+            <video poster="" id="ricardo-rgb" autoplay controls muted loop playsinline width="45%">
+              <source src="./static/videos/np16-SPKCNT_ours_False.mp4"
+                      type="video/mp4">
+            </video>
+            <video poster="" id="ricardo-depth" autoplay controls muted loop playsinline width="45%">
+              <source src="./static/videos/np16-SPKCNT_ours_True.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-three-quarters">
+          <p>
+            Here we show results generated with <i>Portrait-Disco</i>. These videos show the input video
+            being
+            virtually enlarged the focal length and the camera-to-subject distance. 
+            <!-- The right side video shows -->
+            Click on the arrows or drag to see more results.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section hero">
+  <div class="container is-max-desktop">
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+Close-up facial images captured at very close distances can often suffer from perspective distortion, resulting in unnatural and unattractive appearances. 
+In this paper, we propose a new approach for correcting perspective distortions in a single close-up face using perspective-aware 3D GAN inversion. 
+We first use pre-trained 3D GAN to perform inversion on perspective-distorted close-up facial images. 
+Re-rendering the portrait at proper focal length and camera distance effectively correct these distortions and produce more natural-looking results. 
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+
+  <div class="container is-max-desktop">
+    <div class="content has-text-centered">
+    <div class="columns is-centered is-mobile">
+      <div class="column is-full-mobile is-four-fifths-tablet is-four-fifths-desktop has-text-centered is-narrow" style="max-height:365px">
+      <h2 class="title is-3">Face Perspective Undistortion</h2>
+</div>
+</div>
+
+<!-- --------------------------------------------------------------------------- -->
+<div class="notification is-light" id='Serious-result'>
+    <div class="content has-text-centered">
+      <h4 class="title is-4">
+    Comparisons on our collected dataset&nbsp;&nbsp; <small>  <a href="results_serious.html"><i class="fas fa-angle-double-right"></i></a> </small>
+      </h4>
+    </div>
+    <div class="columns is-centered is-mobile">
+      <div class="column is-full-mobile is-four-fifths-tablet is-four-fifths-desktop has-text-left is-narrow" style="max-height:365px">
+</div>
+</div>
+    <div class="columns is-centered is-mobile">
+      <div class="column is-two-fifths-desktop is-two-fifths-tablet is-half-mobile has-text-centered">
+        <div class="hyper-grid-wrapper">
+          <div class="hyper-ref-rgb">
+            <img id="wild2_ref1" style="width: 100%" src="./static/images/Wild/x3-VHQTSI.png"/>
+          </div>
+        </div>
+      </div>
+      <div class="column is-two-fifths-desktop is-two-fifths-tablet is-half-mobile has-text-centered">
+        <div class="hyper-grid-wrapper">
+          <div class="hyper-grid-rgb">
+            <img id="wild2_grid2" style="width: 5000%" src="./static/images/Wild/x3-VHQTSI_ours_dolly.png"/>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-half has-text-centered">
+     <!-- <p style="font-size: small">Try it yourself: move the slider to adjust the focal length of the camera.</p> -->
+
+       <div class="columns is-centered is-vcentered is-mobile">
+          <div class="column is-narrow is-1" style="padding: 0rem">
+                <img width="500%" src="static/icons/fov_1.png"/>
+          </div>
+          <div class="column is-10">
+            <input class="slider is-fullwidth is-large is-warning is-circle"
+                   id="wild2-slider"
+                   step="1" min="0" max="49" value="0" type="range">
+          </div>
+          <div class="column is-narrow is-1" style="padding: 0rem">
+                 <img width="500%" src="static/icons/fov_2.png"/>
+           </div>
+  </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- --------------------------------------------------------------------------- -->
+<div class="notification is-light" id='CMDP-result'>
+    <div class="content has-text-centered">
+      <h4 class="title is-4">
+	Comparisons on CMDP&nbsp;&nbsp; <small> <a href="results_cmdp.html"><i class="fas fa-angle-double-right"></i></a> </small>
+      </h4>
+    </div>
+    <div class="columns is-centered is-mobile">
+      <div class="column is-full-mobile is-four-fifths-tablet is-four-fifths-desktop has-text-left is-narrow" style="max-height:365px">
+</div>
+</div>
+    <div class="columns is-centered is-mobile">
+      <div class="column is-two-fifths-desktop is-two-fifths-tablet is-half-mobile has-text-centered">
+        <div class="hyper-grid-wrapper">
+          <div class="hyper-ref-rgb">
+            <img id="focal_ref1" style="width: 100%" src="./static/images/CMDP/1FPP-060329_2.png"/>
+          </div>
+        </div>
+        <h5><strong><center>Input</center></strong></h5>
+      </div>
+      <div class="column is-two-fifths-desktop is-two-fifths-tablet is-half-mobile has-text-centered">
+        <div class="hyper-grid-wrapper">
+          <div class="hyper-grid-rgb">
+            <img id="focal_grid2" style="width: 5000%" src="./static/images/CMDP/1FPP-060329_2_ours_dolly.png"/>
+          </div>
+        </div>
+        <h5><strong><center>Our results</center></strong></h5>
+      </div>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-half has-text-centered">
+	   <!-- <p style="font-size: small">Try it yourself: move the slider to adjust the focal length of the camera.</p> -->
+
+       <div class="columns is-centered is-vcentered is-mobile">
+          <div class="column is-narrow is-1" style="padding: 0rem">
+                <img width="500%" src="static/icons/fov_1.png"/>
+          </div>
+          <div class="column is-10">
+            <input class="slider is-fullwidth is-large is-warning is-circle"
+                   id="focal-slider"
+                   step="1" min="0" max="49" value="0" type="range">
+          </div>
+          <div class="column is-narrow is-1" style="padding: 0rem">
+                 <img width="500%" src="static/icons/fov_2.png"/>
+           </div>
+	</div>
+    </div>
+	</div>
+</div>
+<!-- --------------------------------------------------------------------------- -->
+<div class="notification is-light" id='Zhao-result'>
+    <div class="content has-text-centered">
+      <h4 class="title is-4">
+		Comparisons on Zhao's dataset&nbsp;&nbsp; <small> <a href="TODO"><i class="fas fa-angle-double-right"></i></a> </small>
+      </h4>
+    </div>
+    <div class="columns is-centered is-mobile">
+      <div class="column is-full-mobile is-four-fifths-tablet is-four-fifths-desktop has-text-left is-narrow" style="max-height:365px">
+</div>
+</div>
+    <div class="columns is-centered is-mobile">
+      <div class="column is-two-fifths-desktop is-two-fifths-tablet is-half-mobile has-text-centered">
+        <div class="hyper-grid-wrapper">
+          <div class="hyper-ref-rgb">
+            <img id="wild_ref1" style="width: 100%" src="./static/images/Zhao/x14-FJHAPL.png"/>
+          </div>
+        </div>
+        <h5><strong><center>Input</center></strong></h5>
+      </div>
+      <div class="column is-two-fifths-desktop is-two-fifths-tablet is-half-mobile has-text-centered">
+        <div class="hyper-grid-wrapper">
+          <div class="hyper-grid-rgb">
+            <img id="wild_grid2" style="width: 5000%" src="./static/images/Zhao/x14-FJHAPL_ours_dolly.png"/>
+          </div>
+        </div>
+        <h5><strong><center>Our results</center></strong></h5>
+      </div>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-half has-text-centered">
+	   <!-- <p style="font-size: small">Try it yourself: move the slider to adjust the focal length of the camera.</p> -->
+
+       <div class="columns is-centered is-vcentered is-mobile">
+          <div class="column is-narrow is-1" style="padding: 0rem">
+                <img width="500%" src="static/icons/fov_1.png"/>
+          </div>
+          <div class="column is-10">
+            <input class="slider is-fullwidth is-large is-warning is-circle"
+                   id="wild-slider"
+                   step="1" min="0" max="49" value="0" type="range">
+          </div>
+          <div class="column is-narrow is-1" style="padding: 0rem">
+                 <img width="500%" src="static/icons/fov_2.png"/>
+           </div>
+	</div>
+    </div>
+	</div>
+</div>
+
+</div>
+</section>
+
+<section class="section">
+
+  <div class="container is-max-desktop">
+    <div class="content has-text-centered">
+    <div class="columns is-centered is-mobile">
+      <div class="column is-full-mobile is-four-fifths-tablet is-four-fifths-desktop has-text-centered is-narrow" style="max-height:365px">
+      <h2 class="title is-3">Bonus Applications</h2>
+</div>
+</div>
+</div></div></section>
+
+<section class="section">
+
+  <div class="container is-max-desktop">
+    <div class="content has-text-centered">
+    <div class="columns is-centered is-mobile">
+      <div class="column is-full-mobile is-four-fifths-tablet is-four-fifths-desktop has-text-centered is-narrow" style="max-height:365px">
+      <h2 class="title is-3">Ablation Study</h2>
+</div>
+</div>
+</div></div></section>
+
+
+<hr/>
 
 <section class="section" id="acknowledgements">
   <div class="container content is-max-desktop">

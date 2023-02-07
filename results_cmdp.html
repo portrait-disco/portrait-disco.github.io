@@ -1,0 +1,211 @@
+
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta property="og:title" content="Portrait-Disco"/>
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+
+
+  <title>Portrait Disco</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+  rel="stylesheet">
+  <link rel="icon" href="static/icons/selfie_mirror_icon.png">
+
+  <link rel="stylesheet" type="text/css" href="./static/slick/slick.css"/>
+  <link rel="stylesheet" type="text/css" href="./static/slick/slick-theme.css"/>
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
+  <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> -->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index-cmdp.js"></script>
+</head>
+<body>
+
+<body>
+
+<section class="publication-header">
+  <div class="hero-body">
+    <div class="container is-max-widescreen">
+      <!-- <div class="columns is-centered"> -->
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Portrait Distortion Correction with<br>Perspective-Aware 3D GANs</h1>
+        </div>
+    </div>
+  </div>   
+</section>
+
+<section class="publication-author-block">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+    <div class="is-size-3 publication-authors">
+            <span class="author-block">Anonymous Authors<sup></sup></span>
+          </div>
+          
+          <div class="is-size-3 publication-authors">
+            <!-- span class="author-block"> </span> 
+            <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span> -->
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              
+              <span class="link-block">
+                <a href="index.html#CMDP-result"
+                  class="external-link button is-normal is-rounded">
+                  <span class="icon">
+                    <img width="100%" src="static/icons/back.png"/>
+                  </span>
+                  <span><strong>BACK</strong></span>
+                </a>
+              </span>
+
+              <span class="link-block">
+                <a href="" target="_blank"
+                  class="external-link button is-normal is-rounded">
+                  <span class="icon">
+                    <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              
+           
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+
+
+
+  <div class="container is-max-desktop">
+    <div class="content has-text-centered">
+    <div class="columns is-centered is-mobile">
+      <div class="column is-full-mobile is-four-fifths-tablet is-four-fifths-desktop has-text-centered is-narrow" style="max-height:365px">
+      
+  
+</div>
+</div>
+<!-- --------------------------------------------------------------------------- -->
+<div class="notification is-light">
+    <div class="content has-text-centered">
+      <h4 class="title is-4">
+	Comparisons on CMDP (<label for="frame-idx-input"><span id="frame-idx">01</span> / <span id="frame-total">50</span></label>)
+      </h4>
+    </div>
+    <div class="columns is-centered is-mobile">
+      <div class="column is-full-mobile is-four-fifths-tablet is-four-fifths-desktop has-text-left is-narrow" style="max-height:365px">
+</div>
+</div>
+    <div class="columns is-centered is-mobile">
+      <div class="column is-narrow is-1" style="padding: 0rem">
+                 <img width="100%" src="static/icons/avatar_1.png"/>
+           </div>
+      <div class="column is-6">
+        <span id="sequence_name">&nbsp;</span>
+            <input class="slider is-fullwidth  "
+                   id="face-slider"
+                   step="1" min="0" max="49" value="0" type="range">
+          </div>
+          <div class="column is-narrow is-1" style="padding: 0rem">
+                 <img width="100%" src="static/icons/avatar_2.png"/>
+           </div>
+    </div>  
+    <div class="columns is-centered is-mobile">
+      <div class="column is-two-fifths-desktop is-two-fifths-tablet is-half-mobile has-text-centered">
+        <div class="hyper-grid-wrapper">
+          <div class="hyper-ref-rgb">
+            <img id="focal_grid0" style="width: 100%" src="./static/images/CMDP/1FPP-060329_2.png"/>
+          </div>
+        </div>
+          <h5><strong><center>Input</center></strong></h5>
+      </div>
+      <div class="column is-two-fifths-desktop is-two-fifths-tablet is-half-mobile has-text-centered">
+        <div class="hyper-grid-wrapper">
+          <div class="hyper-grid-rgb">
+            <img id="focal_grid1" style="width: 5000%" src="./static/images/CMDP/1FPP-060329_2_ours_dolly.png"/>
+          </div>
+        </div>
+        <h5><strong><center>Ours</center></strong></h5>
+      </div>
+      </div>
+      <div class="columns is-centered is-mobile">
+      <div class="column is-two-fifths-desktop is-two-fifths-tablet is-half-mobile has-text-centered">
+        <div class="hyper-grid-wrapper">
+          <div class="hyper-ref-rgb">
+            <img id="focal_grid2" style="width: 100%" src="./static/images/CMDP/1FPP-060329_2.png"/>
+          </div>
+        </div>
+        <h5><strong><center>Fried+</center></strong></h5>
+      </div>
+      <div class="column is-two-fifths-desktop is-two-fifths-tablet is-half-mobile has-text-centered">
+        <div class="hyper-grid-wrapper">
+          <div class="hyper-ref-rgb">
+            <img id="focal_grid3" style="width: 100%" src="./static/images/CMDP/1FPP-060329_2.png"/>
+          </div>
+        </div>
+        <h5><strong><center>Reference</center></strong></h5>
+      </div>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-half has-text-centered">
+	   <!-- <p style="font-size: small">Try it yourself: move the slider to adjust the focal length of the camera.</p> -->
+
+       <div class="columns is-centered is-vcentered is-mobile">
+          <div class="column is-narrow is-1" style="padding: 0rem">
+                <img width="500%" src="static/icons/fov_1.png"/>
+          </div>
+          <div class="column is-10">
+            <input class="slider is-fullwidth is-warning is-circle"
+                   id="focal-slider"
+                   step="1" min="0" max="49" value="0" type="range">
+          </div>
+          <div class="column is-narrow is-1" style="padding: 0rem">
+                 <img width="500%" src="static/icons/fov_2.png"/>
+           </div>
+	</div>
+    </div>
+	</div>
+  <!-- ------------------------------------- -->
+ <!-- ------------------------------------- -->
+</div>
+</section>
+
+<hr/>
+
+<section class="section" id="acknowledgements">
+  <div class="container content is-max-desktop">
+    
+    <p> The website design is adapted from <a href="https://grail.cs.washington.edu/projects/sunstage/">SunStage</a>.
+  </div>
+</section>
+
+<script type="text/javascript" src="./static/slick/slick.min.js"></script>
+
+</body>
+</html>
