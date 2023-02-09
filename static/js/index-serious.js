@@ -88,7 +88,7 @@ function updateImage(value, tag, ID, k) {
     var id_table = id_table_0;
     var methods_list = ['','_ours_dolly','_fried'];
     $(tag).attr('src', "./static/images/Wild/"+id_table[ID]+
-      methods_list[k]+'/'+String(parseInt(value/2)*2)+".png");
+      methods_list[k]+'/'+String(value)+".png");
 }
 
 function updateScene(value, tag, k, focal) {
