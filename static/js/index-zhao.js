@@ -75,14 +75,10 @@ function updateImage(value, tag) {
 }
 
 function updateScene(value, tag, k) {
-    // 'tp3-CTTSKA', 
-    // 'tp4-DOEGEL', 
-     // 'x35-JFUJTJ'
-     // 'tp0-MSBXWE', 'np9-EYBFBI', 'np16-SPKCNT', 'np9-EYBFBI', 
-    var id_table_0 = ['x14-FJHAPL',  'x5-XDTZRN', 'x9-GHBTYP', 'x1-WDVURU', 'x7-OXFJXM', 'x8-NYGSLL', 'x12-RKGMOQ', 'x11-SNSEER', 'x30-OZZPJT', 'x10-UFQKEA', 'x13-ABTDLR', 'x2-JNIGNT', 'x32-PKEGLK'];
+    var id_table_0 = ['x14-FJHAPL',  'x5-XDTZRN', 'x9-GHBTYP', 'x1-WDVURU', 'x7-OXFJXM', 'x8-NYGSLL', 'x11-SNSEER', 'x30-OZZPJT', 'x10-UFQKEA', 'x13-ABTDLR', 'x2-JNIGNT', 'x32-PKEGLK'];
     var id_table = id_table_0;
     // var methods_list = ['','_ours_dolly','_fried_dolly','_ref']
-    var methods_list = ['','_ours_dolly','_']
+    var methods_list = ['','_ours_dolly','_Fried', '_Zhao']
     //$(tag).height(Math.round($(tag).height()))
     // width = $(tag)[0].getBoundingClientRect().width
     // naturalwidth= $(tag)[0].naturalWidth;
