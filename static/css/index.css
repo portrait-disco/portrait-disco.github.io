@@ -56,7 +56,6 @@ body {
 
 
 .publication-title {
-    /*font-size: 10px;*/
     font-family: 'Google Sans', sans-serif;
 }
 
@@ -120,14 +119,14 @@ body {
 }
 
 
-.results-carousel {
+/*.results-carousel {
   overflow: hidden;
-}
-
-
-/*.slick-prev {
-
 }*/
+
+
+.slick-prev {
+
+}
 
 /*.results-carousel > div {
   text-align: center;
@@ -149,9 +148,28 @@ body {
   font-size: 0;
 }
 
+/*
+.slider-navigation-previous {
+    color: black;
+
+}
+.slider-navigation-next {
+    color: black;
+}
+*/
+
 .results-carousel video {
-  height: 360px;
-  width: auto;
+  /*height: 50%;*/
+
+  /*width: 900px;*/
+  height: 400px;
+  /*position: absolute;*/
+  /*top: 0;*/
+  /*left: 0;*/
+  /*min-width: 100%;*/
+  /*height: 500px;*/
+  /*width: auto;*/
+/*  max-width: none;*/
   margin: 0;
 }
 

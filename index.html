@@ -1,1032 +1,1028 @@
-
 <!DOCTYPE html>
-
 <html>
-<head>
-  <meta charset="utf-8">
-  
-  <meta property="og:title" content="DisCO"/>
-  <meta property="og:image:width" content="1200"/>
-  <meta property="og:image:height" content="630"/>
-  <meta http-equiv='cache-control' content='no-cache'> 
-  <meta http-equiv='expires' content='0'> 
-  <meta http-equiv='pragma' content='no-cache'>
+   <head>
+      <meta charset="utf-8">
+      <meta property="og:title" content="DisCO"/>
+      <meta property="og:image:width" content="1200"/>
+      <meta property="og:image:height" content="630"/>
+      <meta http-equiv='cache-control' content='no-cache'>
+      <meta http-equiv='expires' content='0'>
+      <meta http-equiv='pragma' content='no-cache'>
+      <title>DisCO</title>
+      <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+         rel="stylesheet">
+      <link rel="icon" href="static/icons/selfie-icon.png">
+      <link rel="stylesheet" type="text/css" href="./static/slick/slick.css"/>
+      <link rel="stylesheet" type="text/css" href="./static/slick/slick-theme.css"/>
+      <link rel="stylesheet" href="static/css/bulma.min.css">
+      <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+      <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+      <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+      <link rel="stylesheet"
+         href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+      <link rel="stylesheet" href="static/css/index.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+      <script defer src="static/js/fontawesome.all.min.js"></script>
+      <script src="static/js/bulma-carousel.min.js"></script>
+      <script src="static/js/bulma-slider.min.js"></script>
+      <script src="static/js/index.js"></script>
+      <!-- <script src="static/js/index-s.js"></script> -->
+      <script src="static/js/gallery_hover.js"></script>
+   </head>
+   <body>
+      <section class="publication-header">
+         <div class="hero-body">
+            <div class="container is-max-widescreen">
+               <div class="column has-text-centered">
+                  <h1 class="title is-1 publication-title">
+                     <font color="#E74C3C">D</font><font color="#9B59B6">i</font><font color="#3498DB">s</font><font color="#2ECC71">C</font><font color="#F1C40F">O</font><span style="font-weight:normal">: 
+                     Portrait Distortion Correction with Perspective-Aware 3D GANs</span>
+                  </h1>
+               </div>
+            </div>
+         </div>
+      </section>
+      <section class="publication-author-block">
+         <div class="hero-body">
+            <div class="container ">
+               <div class="columns is-centered">
+                  <div class="column has-text-centered">
+                     <div class="is-size-5 publication-authors">
+                        <span class="author-block">
+                        <a href="">Zhixiang Wang</a><sup><font color="green">&#9752;</font>&#x1f415;</sup>,</span>
+                        <span class="author-block">
+                        <a href="">Yu-Lun Liu</a><sup>&#9881;</sup>,</span>
+                        <span class="author-block">
+                        <a href="">Jia-Bin Huang</a><sup>&#128034;</sup>,</span>
+                        <span class="author-block">
+                        <a href="">Shin'ichi Satoh</a><sup>&#x1f415;<font color="green">&#9752;</font></sup>,</span>
+                        <span class="author-block">
+                        <a href="">Sizhuo Ma</a><sup>&#128123;</sup>,</span>
+                        <span class="author-block">
+                        <a href="">Guru Krishnan</a><sup>&#128123;</sup>,</span>
+                        <span class="author-block">
+                        <a href="">Jian Wang</a><sup>&#128123;</sup></span>
+                        </span>
+                     </div>
+                     <div class="is-size-5 publication-authors">
+                        <span class="author-block"><sup><strong><font color="green">&#9752;</font></strong></sup>University of Tokyo,</span>
+                        <span class="author-block"><sup>&#x1f415;</sup>NII,</span>
+                        <span class="author-block"><sup>&#9881;</sup>National Yang Ming Chiao Tung University,</span>
+                        <span class="author-block"><sup>&#128034;</sup>University of Maryland, College Park,</span>
+                        <span class="author-block"><sup>&#128123;</sup>Snap</span>
+                     </div>
+                     <div class="column has-text-centered">
+                        <div class="publication-links">
+                           <span class="link-block">
+                           <a href=""
+                              class="external-link button is-normal is-rounded is-dark">
+                           <span class="icon">
+                           <i class="fas fa-file-pdf"></i>
+                           </span>
+                           <span>Paper</span>
+                           </a>
+                           </span>
+                           <span class="link-block">
+                           <a href="" target="_blank"
+                              class="external-link button is-normal is-rounded is-dark">
+                           <span class="icon">
+                           <i class="ai ai-arxiv"></i>
+                           </span>
+                           <span>arXiv</span>
+                           </a>
+                           </span>
+                           <span class="link-block">
+                           <a href=""
+                              class="external-link button is-normal is-rounded is-dark">
+                           <span class="icon">
+                           <i class="fab fa-github"></i>
+                           </span>
+                           <span>Code (coming soon!)</span>
+                           </a>
+                           </span>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+      <section class="hero is-dark is-small">
+         <div class="hero-body">
+            <div class="container">
+               <div id="results-carousel" class="carousel results-carousel">
+                  <div class="item item-man1">
+                     <video poster="" id="man1" autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                        <source src="./static/videos/tp0-MSBXWE_ours_True.mp4"
+                           type="video/mp4">
+                     </video>
+                  </div>
+                  <div class="item item-womanforest">
+                     <video poster="" id="womanforest" autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                        <source src="./static/videos/np9-EYBFBI_ours_True.mp4"
+                           type="video/mp4">
+                     </video>
+                  </div>
+                  <div class="item item-man2">
+                     <video poster="" id="man2" autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                        <source src="./static/videos/x5-XDTZRN_ours_True.mp4"
+                           type="video/mp4">
+                     </video>
+                  </div>
+                  <div class="item item-girlsea">
+                     <video poster="" id="girlsea" autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                        <source src="./static/videos/tp4-DOEGEL_ours_True.mp4"
+                           type="video/mp4">
+                     </video>
+                  </div>
+                  <div class="item item-womanclassroom">
+                     <video poster="" id="womanclassroom" autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                        <source src="./static/videos/np16-SPKCNT_ours_True.mp4"
+                           type="video/mp4">
+                     </video>
+                  </div>
+               </div>
+               <div class="columns is-centered has-text-centered">
+                  <div class="column is-three-quarters">
+                     <p>
+                        Portrait photos captured from a near-range distance often suffer from undesired perspective distortions. <b>DisCO</b> corrects these perspective distortions and synthesizes more pleasant views by <I>virtually</I> enlarging focal length and camera-to-subject distance. 
+                     </p>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+      <section class="section hero">
+         <div class="container is-max-desktop">
+            <div class="columns is-centered has-text-centered">
+               <div class="column is-four-fifths">
+                  <h2 class="title is-3">Abstract</h2>
+                  <div class="content has-text-justified">
+                     <p>
+                        Close-up facial images captured at very close distances can often suffer from perspective distortion, resulting in unnatural and unattractive appearances. 
+                        In this paper, we propose a new approach for correcting perspective distortions in a single close-up face using perspective-aware 3D GAN inversion. 
+                        We first use pre-trained 3D GAN to perform inversion on perspective-distorted close-up facial images. 
+                        Re-rendering the portrait at proper focal length and camera distance effectively correct these distortions and produce more natural-looking results. 
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+      <!-- <hr> -->
+      <section class="section">
+         <div class='container is-max-desktop'>
+            <!-- <h2 class="title is-3">More results</h2> -->
+            <div class="content">
+              <h3 class="title is-4">Correct in-the-wild images</h3>
+              <div class="notification hero is-light">
+               <!-- <p>Our collected</p> -->
+               <div class="row" id="">
+                  <div class="columns">
+                     <!-- <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                        <img src="static/images/Wild/ct2-CGSVRN.png" class='galleryImg  selected ' style="width:100%" onmouseover="hover(this);" onmouseout="hoverOut(this)">
+                        </div> -->
+                     <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                        <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                           <source src="./static/images/Wild/ct2-CGSVRN_ours.mp4"
+                              type="video/mp4">
+                        </video>
+                     </div>
+                     <!-- <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                        <img src="static/images/Wild/tp1-PAFAEH.png" class='galleryImg ' style="width:100%" onmouseover="hover(this);" onmouseout="hoverOut(this)">
+                        </div> -->
+                     <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                        <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                           <source src="./static/images/Wild/tp1-PAFAEH_ours.mp4"
+                              type="video/mp4">
+                        </video>
+                     </div>
+                     <!-- <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                        <img src="static/images/Wild/tp0-RWHPIX.png" class='galleryImg ' style="width:100%" onmouseover="hover(this);" onmouseout="hoverOut(this)">
+                        </div> -->
+                     <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                        <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                           <source src="./static/images/Wild/tp0-RWHPIX_ours.mp4"
+                              type="video/mp4">
+                        </video>
+                     </div>
+                     <!-- <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                        <img src="static/images/Wild/np2-ZBDKCJ.png" class='galleryImg ' style="width:100%" onmouseover="hover(this);" onmouseout="hoverOut(this)">
+                        </div> -->
+                     <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                        <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                           <source src="./static/images/Wild/np2-ZBDKCJ_ours.mp4"
+                              type="video/mp4">
+                        </video>
+                     </div>
+                     <!-- <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                        <img src="static/images/Wild/np7-LBIDIJ.png" class='galleryImg ' style="width:100%" onmouseover="hover(this);" onmouseout="hoverOut(this)">
+                        </div> -->
+                     <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                        <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                           <source src="./static/images/Wild/np7-LBIDIJ_ours.mp4"
+                              type="video/mp4">
+                        </video>
+                     </div>
+                  </div>
+               </div>
+               <div class="row" id="">
+                  <div class="columns">
+                     <!-- div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                        <img src="static/images/Wild/np6-ZRSUNQ.png" class='galleryImg  selected ' style="width:100%" onmouseover="hover(this);" onmouseout="hoverOut(this)">
+                        </div> -->
+                     <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                        <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                           <source src="./static/images/Wild/np6-ZRSUNQ_ours.mp4"
+                              type="video/mp4">
+                        </video>
+                     </div>
+                     <!-- <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                        <img src="static/images/Wild/np1-JYEFHB.png" class='galleryImg  selected ' style="width:100%" onmouseover="hover(this);" onmouseout="hoverOut(this)">
+                        </div> -->
+                     <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                        <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                           <source src="./static/images/Wild/np1-JYEFHB_ours.mp4"
+                              type="video/mp4">
+                        </video>
+                     </div>
+                     <!-- <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                        <img src="static/images/Wild/ct3-GLGJJW.png" class='galleryImg  selected ' style="width:100%" onmouseover="hover(this);" onmouseout="hoverOut(this)">
+                        </div> -->
+                     <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                        <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                           <source src="./static/images/Wild/ct3-GLGJJW_ours.mp4"
+                              type="video/mp4">
+                        </video>
+                     </div>
+                     <!-- <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                        <img src="static/images/Wild/x20-VNOEMX.png" class='galleryImg  selected ' style="width:100%" onmouseover="hover(this);" onmouseout="hoverOut(this)">
+                        </div> -->
+                     <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                        <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                           <source src="./static/images/Wild/x20-VNOEMX_ours.mp4"
+                              type="video/mp4">
+                        </video>
+                     </div>
+                     <!-- <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                        <img src="static/images/Wild/x19-PFHBBG.png" class='galleryImg  selected ' style="width:100%" onmouseover="hover(this);" onmouseout="hoverOut(this)">
+                        </div> -->
+                     <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                        <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                           <source src="./static/images/Wild/x19-PFHBBG_ours.mp4"
+                              type="video/mp4">
+                        </video>
+                     </div>
+                  </div>
+               </div>
+               <div class="row" id="">
+                  <div class="columns">
+                     <!-- <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                        <img src="static/images/Wild/np10-CXQFYN.png" class='galleryImg  selected ' style="width:100%" onmouseover="hover(this);" onmouseout="hoverOut(this)">
+                        </div> -->
+                     <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                        <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                           <source src="./static/images/Wild/np10-CXQFYN_ours.mp4"
+                              type="video/mp4">
+                        </video>
+                     </div>
+                     <!-- <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                        <img src="static/images/Wild/x3-VHQTSI.png" class='galleryImg  selected ' style="width:100%" onmouseover="hover(this);" onmouseout="hoverOut(this)">
+                        </div> -->
+                     <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                        <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                           <source src="./static/images/Wild/x3-VHQTSI_ours.mp4"
+                              type="video/mp4">
+                        </video>
+                     </div>
+                     <!-- <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                        <img src="static/images/Wild/x17-JVSNDO.png" class='galleryImg  selected ' style="width:100%" onmouseover="hover(this);" onmouseout="hoverOut(this)">
+                        </div> -->
+                     <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                        <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                           <source src="./static/images/Wild/x17-JVSNDO_ours.mp4"
+                              type="video/mp4">
+                        </video>
+                     </div>
+                     <!-- <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                        <img src="static/images/Wild/x36-RIVJAK.png" class='galleryImg  selected ' style="width:100%" onmouseover="hover(this);" onmouseout="hoverOut(this)">
+                        </div> -->
+                     <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                        <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                           <source src="./static/images/Wild/x36-RIVJAK_ours.mp4"
+                              type="video/mp4">
+                        </video>
+                     </div>
+                     <!-- <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                        <img src="static/images/Wild/x21-DYTTRM.png" class='galleryImg  selected ' style="width:100%" onmouseover="hover(this);" onmouseout="hoverOut(this)">
+                        </div> -->
+                     <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                        <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                           <source src="./static/images/Wild/x21-DYTTRM_ours.mp4"
+                              type="video/mp4">
+                        </video>
+                     </div>
+                  </div>
+               </div>
+               <div class="row" id="">
+                  <div class="columns">
+                     <!-- <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                        <img src="static/images/Wild/x25-YFOSCZ.png" class='galleryImg  selected ' style="width:100%" onmouseover="hover(this);" onmouseout="hoverOut(this)">
+                        </div> -->
+                     <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                        <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                           <source src="./static/images/Wild/x25-YFOSCZ_ours.mp4"
+                              type="video/mp4">
+                        </video>
+                     </div>
+                     <!-- <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                        <img src="static/images/Wild/x28-LBFFPD.png" class='galleryImg  selected ' style="width:100%" onmouseover="hover(this);" onmouseout="hoverOut(this)">
+                        </div> -->
+                     <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                        <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                           <source src="./static/images/Wild/x28-LBFFPD_ours.mp4"
+                              type="video/mp4">
+                        </video>
+                     </div>
+                     <!-- <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                        <img src="static/images/Wild/x39-HLEYJC.png" class='galleryImg  selected ' style="width:100%" onmouseover="hover(this);" onmouseout="hoverOut(this)">
+                        </div> -->
+                     <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                        <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                           <source src="./static/images/Wild/x39-HLEYJC_ours.mp4"
+                              type="video/mp4">
+                        </video>
+                     </div>
+                     <!-- <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                        <img src="static/images/Wild/x26-FVPOQG.png" class='galleryImg  selected ' style="width:100%" onmouseover="hover(this);" onmouseout="hoverOut(this)">
+                        </div> -->
+                     <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                        <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                           <source src="./static/images/Wild/x26-FVPOQG_ours.mp4"
+                              type="video/mp4">
+                        </video>
+                     </div>
+                     <!-- <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                        <img src="static/images/Wild/x16-CWOEGT.png" class='galleryImg  selected ' style="width:100%" onmouseover="hover(this);" onmouseout="hoverOut(this)">
+                        </div> -->
+                     <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                        <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                           <source src="./static/images/Wild/x16-CWOEGT_ours.mp4"
+                              type="video/mp4">
+                        </video>
+                     </div>
+                  </div>
+                  </div>
+                  <!-- <p>Zhao's dataset</p> -->
+                  <div class="row" id="">
+                     <div class="columns">
+                        <!-- <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                           <img src="./static/images/Zhao/x14-FJHAPL.png" class='galleryImg  selected ' style="width:100%" onmouseover="hover(this);" onmouseout="hoverOut(this)">
+                           </div> -->
+                        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                           <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                              <source src="./static/images/Zhao/x14-FJHAPL_ours.mp4"
+                                 type="video/mp4">
+                           </video>
+                        </div>
+                        <!-- <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                           <img src="./static/images/Zhao/x5-XDTZRN.png" class='galleryImg  selected ' style="width:100%" onmouseover="hover(this);" onmouseout="hoverOut(this)">
+                           </div> -->
+                        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                           <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                              <source src="./static/images/Zhao/x5-XDTZRN_ours.mp4"
+                                 type="video/mp4">
+                           </video>
+                        </div>
+                        <!-- <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                           <img src="./static/images/Zhao/x9-GHBTYP.png" class='galleryImg  selected ' style="width:100%" onmouseover="hover(this);" onmouseout="hoverOut(this)">
+                           </div> -->
+                        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                           <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                              <source src="./static/images/Zhao/x9-GHBTYP_ours.mp4"
+                                 type="video/mp4">
+                           </video>
+                        </div>
+                        <!-- <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                           <img src="./static/images/Zhao/x1-WDVURU.png" class='galleryImg  selected ' style="width:100%" onmouseover="hover(this);" onmouseout="hoverOut(this)">
+                           </div> -->
+                        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                           <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                              <source src="./static/images/Zhao/x1-WDVURU_ours.mp4"
+                                 type="video/mp4">
+                           </video>
+                        </div>
+                        <!-- <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                           <img src="./static/images/Zhao/x13-ABTDLR.png" class='galleryImg  selected ' style="width:100%" onmouseover="hover(this);" onmouseout="hoverOut(this)">
+                           </div> -->
+                        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                           <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                              <source src="./static/images/Zhao/x13-ABTDLR_ours.mp4"
+                                 type="video/mp4">
+                           </video>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="row" id="">
+                     <div class="columns">
+                        <!-- <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                           <img src="./static/images/Zhao/x8-NYGSLL.png" class='galleryImg  selected ' style="width:100%" onmouseover="hover(this);" onmouseout="hoverOut(this)">
+                           </div> -->
+                        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                           <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                              <source src="./static/images/Zhao/x8-NYGSLL_ours.mp4"
+                                 type="video/mp4">
+                           </video>
+                        </div>
+                        <!-- <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                           <img src="./static/images/Zhao/x7-OXFJXM.png" class='galleryImg  selected ' style="width:100%" onmouseover="hover(this);" onmouseout="hoverOut(this)">
+                           </div> -->
+                        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                           <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                              <source src="./static/images/Zhao/x7-OXFJXM_ours.mp4"
+                                 type="video/mp4">
+                           </video>
+                        </div>
+                        <!-- <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                           <img src="./static/images/Zhao/x11-SNSEER.png" class='galleryImg  selected ' style="width:100%" onmouseover="hover(this);" onmouseout="hoverOut(this)">
+                           </div> -->
+                        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                           <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                              <source src="./static/images/Zhao/x11-SNSEER_ours.mp4"
+                                 type="video/mp4">
+                           </video>
+                        </div>
+                        <!-- <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                           <img src="./static/images/Zhao/x10-UFQKEA.png" class='galleryImg  selected ' style="width:100%" onmouseover="hover(this);" onmouseout="hoverOut(this)">
+                           </div> -->
+                        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                           <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                              <source src="./static/images/Zhao/x10-UFQKEA_ours.mp4"
+                                 type="video/mp4">
+                           </video>
+                        </div>
+                        <!-- <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                           <img src="./static/images/Zhao/x30-OZZPJT.png" class='galleryImg  selected ' style="width:100%" onmouseover="hover(this);" onmouseout="hoverOut(this)">
+                           </div> -->
+                        <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                           <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                              <source src="./static/images/Zhao/x30-OZZPJT_ours.mp4"
+                                 type="video/mp4">
+                           </video>
+                        </div>
+                     </div>
+                  </div>
+              </div>
+            </div>
+         <!-- </div> -->
 
-
-  <title>DisCO</title>
-
-
-  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
-  rel="stylesheet">
-  <link rel="icon" href="static/icons/selfie-icon.png">
-
-  <link rel="stylesheet" type="text/css" href="./static/slick/slick.css"/>
-  <link rel="stylesheet" type="text/css" href="./static/slick/slick-theme.css"/>
-
-  <link rel="stylesheet" href="static/css/bulma.min.css">
-  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
-  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
-  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
-  <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-  <link rel="stylesheet" href="static/css/index.css">
-
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
-  <script defer src="static/js/fontawesome.all.min.js"></script>
-  <script src="static/js/bulma-carousel.min.js"></script>
-  <script src="static/js/bulma-slider.min.js"></script>
-  <script src="static/js/index.js"></script>
-  <!-- <script src="static/js/index-s.js"></script> -->
-  <script src="static/js/gallery_hover.js"></script>
-</head>
-<body>
-
-<body>
-
-<section class="publication-header">
-  <div class="hero-body">
-    <div class="container is-max-widescreen">
-        <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">
-            <font color="#E74C3C">D</font><font color="#9B59B6">i</font><font color="#3498DB">s</font><font color="#2ECC71">C</font><font color="#F1C40F">O</font><span style="font-weight:normal">: 
-            Portrait Distortion Correction with Perspective-Aware 3D GANs</span></h1> 
-        </div>
-    </div>
-  </div>   
-</section>
-
-<section class="publication-author-block">
-  <div class="hero-body">
-    <div class="container is-max-desktop">
-
-      <div class="columns is-centered">
-        <div class="column has-text-centered">
-		<div class="is-size-5 publication-authors">
-            <span class="author-block">
-              <a href="">Zhixiang Wang</a><sup>&#x1F96C;&#127970;</sup>,</span>
-            <span class="author-block">
-              <a href="">Yu-Lun Liu</a><sup>&#127796;</sup>,</span>
-            <span class="author-block">
-                <a href="">Jia-Bin Huang</a><sup>&#128034;</sup>,</span>
-            <span class="author-block">
-              <a href="">Shin'ichi Satoh</a><sup>&#127970;&#x1F96C;</sup></span><br>
-            <span class="author-block">
-                <a href="">Sizhuo Ma</a><sup>&#128123;</sup>,</span>
-            <span class="author-block">
-                <a href="">Guru Krishnan</a><sup>&#128123;</sup>,</span>
-            <span class="author-block">
-                <a href="">Jian Wang</a><sup>&#128123;</sup></span>
-            </span>
-          </div>
-          
-          <div class="is-size-5 publication-authors">
-            <span class="author-block"><sup><strong><font color="blue">&#x1F96C;</font></strong></sup>University of Tokyo,</span>
-            <span class="author-block"><sup>&#127970;</sup>NII,</span>
-            <span class="author-block"><sup>&#127796;</sup>National Taiwan University,</span>
-            <span class="author-block"><sup>&#128034;</sup>University of Maryland, College Park,</span>
-            <span class="author-block"><sup>&#128123;</sup>Snap</span>
-          </div>
-
-          <div class="column has-text-centered">
-            <div class="publication-links">
-              
-              <span class="link-block">
-                <a href=""
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fas fa-file-pdf"></i>
-                  </span>
-                  <span>Paper</span>
-                </a>
-              </span>
-
-              <span class="link-block">
-                <a href="" target="_blank"
-                  class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                    <i class="ai ai-arxiv"></i>
-                  </span>
-                  <span>arXiv</span>
-                </a>
-              </span>
-
-              <span class="link-block">
-                <a href=""
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fab fa-github"></i>
-                  </span>
-                  <span>Code (coming soon!)</span>
-                  </a>
-              </span>
-              
-          
-           
+         <!-- <div class="container is-max-desktop"> -->
+            
+            <!-- <hr> -->
+            <div class="content">
+              <h3 class="title is-4">Correct images from <a href="https://data.caltech.edu/records/n5vnm-mqr05">CMDP</a></h3>
+            <div class="notification hero is-light">
+               <div class="row">
+                  <div class="columns">
+                     <!-- <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                        <img src="./static/images/CMDP/7WUF-060329_2.png" class='galleryImg  selected ' style="width:100%" onmouseover="hover(this);" onmouseout="hoverOut(this)">
+                        </div> -->
+                     <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                        <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                           <source src="./static/images/CMDP/7WUF-060329_2_ours.mp4"
+                              type="video/mp4">
+                        </video>
+                     </div>
+                     <!-- <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                        <img src="./static/images/CMDP/1FPP-060329_2.png" class='galleryImg  selected ' style="width:100%" onmouseover="hover(this);" onmouseout="hoverOut(this)">
+                        </div> -->
+                     <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                        <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                           <source src="./static/images/CMDP/1FPP-060329_2_ours.mp4"
+                              type="video/mp4">
+                        </video>
+                     </div>
+                     <!-- <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                        <img src="./static/images/CMDP/WWGO-060329_2.png" class='galleryImg  selected ' style="width:100%" onmouseover="hover(this);" onmouseout="hoverOut(this)">
+                        </div> -->
+                     <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                        <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                           <source src="./static/images/CMDP/WWGO-060329_2_ours.mp4"
+                              type="video/mp4">
+                        </video>
+                     </div>
+                     <!-- <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                        <img src="./static/images/CMDP/XWQM-060208_2.png" class='galleryImg  selected ' style="width:100%" onmouseover="hover(this);" onmouseout="hoverOut(this)">
+                        </div> -->
+                     <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                        <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                           <source src="./static/images/CMDP/XWQM-060208_2_ours.mp4"
+                              type="video/mp4">
+                        </video>
+                     </div>
+                     <!-- <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                        <img src="./static/images/CMDP/QZGT-060329_2.png" class='galleryImg  selected ' style="width:100%" onmouseover="hover(this);" onmouseout="hoverOut(this)">
+                        </div> -->
+                     <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                        <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                           <source src="./static/images/CMDP/QZGT-060329_2_ours.mp4"
+                              type="video/mp4">
+                        </video>
+                     </div>
+                  </div>
+               </div>
+               <div class="row">
+                  <div class="columns">
+                     <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                        <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                           <source src="./static/images/CMDP/5ZAZ-060208_2_ours.mp4"
+                              type="video/mp4">
+                        </video>
+                     </div>
+                     <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                        <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                           <source src="./static/images/CMDP/J6XX-060208_2_ours.mp4"
+                              type="video/mp4">
+                        </video>
+                     </div>
+                     <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                        <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                           <source src="./static/images/CMDP/FHNJ-060329_2_ours.mp4"
+                              type="video/mp4">
+                        </video>
+                     </div>
+                     <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                        <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                           <source src="./static/images/CMDP/VND0-060329_2_ours.mp4"
+                              type="video/mp4">
+                        </video>
+                     </div>
+                     <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                        <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                           <source src="./static/images/CMDP/9QAD-050615_2_ours.mp4"
+                              type="video/mp4">
+                        </video>
+                     </div>
+                  </div>
+               </div>
+               <!-- end of row -->
+               <div class="row">
+                  <div class="columns">
+                     <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                        <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                           <source src="./static/images/CMDP/8S7R-060329_2_ours.mp4"
+                              type="video/mp4">
+                        </video>
+                     </div>
+                     <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                        <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                           <source src="./static/images/CMDP/RXZN-060208_2_ours.mp4"
+                              type="video/mp4">
+                        </video>
+                     </div>
+                     <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                        <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                           <source src="./static/images/CMDP/23UG-060329_2_ours.mp4"
+                              type="video/mp4">
+                        </video>
+                     </div>
+                     <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                        <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                           <source src="./static/images/CMDP/QHTL-060329_2_ours.mp4"
+                              type="video/mp4">
+                        </video>
+                     </div>
+                     <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                        <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                           <source src="./static/images/CMDP/FPOG-060329_2_ours.mp4"
+                              type="video/mp4">
+                        </video>
+                     </div>
+                  </div>
+               </div>
+               <!-- end of row -->
+               <div class="row">
+                  <div class="columns">
+                     <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                        <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                           <source src="./static/images/CMDP/WHO1-060329_2_ours.mp4"
+                              type="video/mp4">
+                        </video>
+                     </div>
+                     <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                        <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                           <source src="./static/images/CMDP/92RT-050419_2_ours.mp4"
+                              type="video/mp4">
+                        </video>
+                     </div>
+                     <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                        <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                           <source src="./static/images/CMDP/3XKB-060208_2_ours.mp4"
+                              type="video/mp4">
+                        </video>
+                     </div>
+                     <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                        <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                           <source src="./static/images/CMDP/QQXY-060329_2_ours.mp4"
+                              type="video/mp4">
+                        </video>
+                     </div>
+                     <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                        <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                           <source src="./static/images/CMDP/535X-060329_2_ours.mp4"
+                              type="video/mp4">
+                        </video>
+                     </div>
+                  </div>
+               </div>
+               <!--   end of row -->
+               <div class="row">
+                  <div class="columns">
+                     <!-- <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                        <img src="./static/images/CMDP/7WUF-060329_2.png" class='galleryImg  selected ' style="width:100%" onmouseover="hover(this);" onmouseout="hoverOut(this)">
+                        </div> -->
+                     <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                        <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                           <source src="./static/images/CMDP/JFZC-050419_2_ours.mp4"
+                              type="video/mp4">
+                        </video>
+                     </div>
+                     <!-- <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                        <img src="./static/images/CMDP/1FPP-060329_2.png" class='galleryImg  selected ' style="width:100%" onmouseover="hover(this);" onmouseout="hoverOut(this)">
+                        </div> -->
+                     <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                        <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                           <source src="./static/images/CMDP/X5FH-050622_2_ours.mp4"
+                              type="video/mp4">
+                        </video>
+                     </div>
+                     <!-- <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                        <img src="./static/images/CMDP/WWGO-060329_2.png" class='galleryImg  selected ' style="width:100%" onmouseover="hover(this);" onmouseout="hoverOut(this)">
+                        </div> -->
+                     <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                        <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                           <source src="./static/images/CMDP/9UL2-050611_2_ours.mp4"
+                              type="video/mp4">
+                        </video>
+                     </div>
+                     <!-- <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                        <img src="./static/images/CMDP/XWQM-060208_2.png" class='galleryImg  selected ' style="width:100%" onmouseover="hover(this);" onmouseout="hoverOut(this)">
+                        </div> -->
+                     <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                        <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                           <source src="./static/images/CMDP/R77S-060329_2_ours.mp4"
+                              type="video/mp4">
+                        </video>
+                     </div>
+                     <!-- <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                        <img src="./static/images/CMDP/QZGT-060329_2.png" class='galleryImg  selected ' style="width:100%" onmouseover="hover(this);" onmouseout="hoverOut(this)">
+                        </div> -->
+                     <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                        <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                           <source src="./static/images/CMDP/K36K-060208_2_ours.mp4"
+                              type="video/mp4">
+                        </video>
+                     </div>
+                  </div>
+               </div>
+               <div class="row">
+                  <div class="columns">
+                     <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                        <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                           <source src="./static/images/CMDP/XOPC-060329_2_ours.mp4"
+                              type="video/mp4">
+                        </video>
+                     </div>
+                     <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                        <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                           <source src="./static/images/CMDP/ALMI-060208_2_ours.mp4"
+                              type="video/mp4">
+                        </video>
+                     </div>
+                     <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                        <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                           <source src="./static/images/CMDP/K5AT-050611_2_ours.mp4"
+                              type="video/mp4">
+                        </video>
+                     </div>
+                     <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                        <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                           <source src="./static/images/CMDP/AMOH-060329_2_ours.mp4"
+                              type="video/mp4">
+                        </video>
+                     </div>
+                     <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                        <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                           <source src="./static/images/CMDP/60R0-060329_2_ours.mp4"
+                              type="video/mp4">
+                        </video>
+                     </div>
+                  </div>
+               </div>
+               <!-- end of row -->
+               <div class="row">
+                  <div class="columns">
+                     <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                        <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                           <source src="./static/images/CMDP/S36F-050611_2_ours.mp4"
+                              type="video/mp4">
+                        </video>
+                     </div>
+                     <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                        <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                           <source src="./static/images/CMDP/62RT-060329_2_ours.mp4"
+                              type="video/mp4">
+                        </video>
+                     </div>
+                     <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                        <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                           <source src="./static/images/CMDP/KKMI-060329_2_ours.mp4"
+                              type="video/mp4">
+                        </video>
+                     </div>
+                     <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                        <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                           <source src="./static/images/CMDP/YWXB-060329_2_ours.mp4"
+                              type="video/mp4">
+                        </video>
+                     </div>
+                     <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                        <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                           <source src="./static/images/CMDP/B4IY-050419_2_ours.mp4"
+                              type="video/mp4">
+                        </video>
+                     </div>
+                  </div>
+               </div>
+               <!-- end of row -->
+               <div class="row">
+                  <div class="columns">
+                     <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                        <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                           <source src="./static/images/CMDP/SDCQ-060329_2_ours.mp4"
+                              type="video/mp4">
+                        </video>
+                     </div>
+                     <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                        <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                           <source src="./static/images/CMDP/73MC-050615_2_ours.mp4"
+                              type="video/mp4">
+                        </video>
+                     </div>
+                     <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                        <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                           <source src="./static/images/CMDP/Z7QW-060208_2_ours.mp4"
+                              type="video/mp4">
+                        </video>
+                     </div>
+                     <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                        <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                           <source src="./static/images/CMDP/BHSN-050615_2_ours.mp4"
+                              type="video/mp4">
+                        </video>
+                     </div>
+                     <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                        <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                           <source src="./static/images/CMDP/535X-060329_2_ours.mp4"
+                              type="video/mp4">
+                        </video>
+                     </div>
+                  </div>
+               </div>
+               <!--   end of row -->
+               <div class="row">
+                  <div class="columns">
+                     <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                        <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                           <source src="./static/images/CMDP/T6D7-060329_2_ours.mp4"
+                              type="video/mp4">
+                        </video>
+                     </div>
+                     <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                        <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                           <source src="./static/images/CMDP/7FNY-060329_2_ours.mp4"
+                              type="video/mp4">
+                        </video>
+                     </div>
+                     <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                        <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                           <source src="./static/images/CMDP/MSX9-060329_2_ours.mp4"
+                              type="video/mp4">
+                        </video>
+                     </div>
+                     <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                        <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                           <source src="./static/images/CMDP/ZBZP-050611_2_ours.mp4"
+                              type="video/mp4">
+                        </video>
+                     </div>
+                     <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                        <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                           <source src="./static/images/CMDP/BUP6-060329_2_ours.mp4"
+                              type="video/mp4">
+                        </video>
+                     </div>
+                  </div>
+               </div>
+               <!-- end of row -->
+               <div class="row">
+                  <div class="columns">
+                     <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                        <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                           <source src="./static/images/CMDP/UYGI-060329_2_ours.mp4"
+                              type="video/mp4">
+                        </video>
+                     </div>
+                     <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                        <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                           <source src="./static/images/CMDP/7IVG-060208_2_ours.mp4"
+                              type="video/mp4">
+                        </video>
+                     </div>
+                     <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                        <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                           <source src="./static/images/CMDP/NRRD-060208_2_ours.mp4"
+                              type="video/mp4">
+                        </video>
+                     </div>
+                     <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                        <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                           <source src="./static/images/CMDP/ENGX-060208_2_ours.mp4"
+                              type="video/mp4">
+                        </video>
+                     </div>
+                     <div class="column is-one-fifth-desktop is-one-fifth-tablet">
+                        <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                           <source src="./static/images/CMDP/VIMC-050615_2_ours.mp4"
+                              type="video/mp4">
+                        </video>
+                     </div>
+                  </div>
+               </div>
+               <!--   end of row -->
             </div>
           </div>
 
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<section class="hero is-dark is-small">
-  <div class="hero-body">
-    <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-rednose2">
-          <video poster="" id="rednose2" autoplay controls muted loop playsinline webkit-playsinline height="100%">
-            <source src="./static/videos/tp0-MSBXWE_ours_True.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item ">
-          <video poster="" id="halloween1" autoplay controls muted loop playsinline webkit-playsinline height="100%">
-            <source src="./static/videos/np9-EYBFBI_ours_True.mp4"
-                      type="video/mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-halloween4">
-          <video poster="" id="halloween4" autoplay controls muted loop playsinline webkit-playsinline height="100%">
-            <source src="./static/videos/tp4-DOEGEL_ours_True.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-halloween3">
-          <video poster="" id="halloween3" autoplay controls muted loop playsinline webkit-playsinline height="100%">
-            <source src="./static/videos/np16-SPKCNT_ours_True.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-      </div>
-        <div class="columns is-centered has-text-centered">
-          <div class="column is-three-quarters">
-            <p>
-              Portrait photos captured from a near-range distance often suffer from undesired perspective distortions. <b>DisCO</b> corrects these perspective distortions and synthesizes more pleasant views by <I>virtually</I> enlarging the focal length and the camera-to-subject distance. 
-            </p>
+            <div class="notification hero is-light">
+            <div class="content">
+               <!--       <h4 class="title is-4">
+                  Comparisons on our collected images
+                      </h4> -->
+               <!-- <div class="columns is-centered is-mobile">
+                  <div class="column is-full-mobile is-four-fifths-tablet is-four-fifths-desktop has-text-left is-narrow" style="max-height:365px">
+                  </div>
+               </div> -->
+               <!-- <div class=""> -->
+               <div class="columns is-centered is-mobile is-vcentered">
+                  <div class="column is-one-third has-text-centered">
+                     <div class="columns is-centered is-vcentered is-mobile">
+                        <div class="column is-narrow is-2" style="padding: 0rem">
+                           <img width="500%" src="static/icons/avatar_2.png"/>
+                        </div>
+                        <div class="column is-8">
+                           <input class="slider is-fullwidth is-small"
+                              id="face-slider"
+                              step="1" min="0" max="19" value="0" type="range">
+                        </div>
+                        <!-- <output for="sliderWithValue">20</output> -->
+                        <!-- <div class="column is-narrow is-2" style="padding: 0rem">
+                           <img width="500%" src="static/icons/avatar_2.png"/>
+                           </div> -->
+                     </div>
+                     <!-- <div class="column is-1 has-text-centered"></div> -->
+                  </div>
+                  <!-- <div class="columns is-centered is-mobile"> -->
+                  <div class="column is-one-third has-text-centered">
+                     <!-- <p style="font-size: small">Try it yourself: move the slider to adjust the focal length of the camera.</p> -->
+                     <div class="columns  is-centered is-vcentered is-mobile">
+                        <div class="column is-narrow is-1" style="padding: 0rem">
+                           <img width="500%" src="static/icons/fov_1.png"/>
+                        </div>
+                        <div class="column is-8">
+                           <input class="slider is-fullwidth is-small"
+                              id="focal-slider"
+                              step="1" min="0" max="49" value="0" type="range">
+                        </div>
+                        <!-- <div class="column is-narrow is-1" style="padding: 0rem">
+                           <img width="500%" src="static/icons/fov_2.png"/>
+                           </div> -->
+                     </div>
+                  </div>
+                  <!-- </div>  -->
+               </div>
+               <div class="columns is-centered is-mobile">
+                  <div class="column is-one-third-desktop is-one-third-tablet is-one-third-mobile has-text-centered">
+                     <div class="hyper-grid-wrapper">
+                        <div class="hyper-ref-rgb">
+                           <img id="focal_grid0" style="width: 100%" src="./static/images/"/>
+                        </div>
+                     </div>
+                     <h5>
+                        <strong>
+                           <center>Input</center>
+                        </strong>
+                     </h5>
+                  </div>
+                  <div class="column is-one-third-desktop is-one-third-tablet is-one-third-mobile has-text-centered">
+                     <div class="hyper-grid-wrapper">
+                        <div class="hyper-grid-rgb">
+                           <img id="focal_grid1" style="width: 100%" src="./static/images/"/>
+                        </div>
+                     </div>
+                     <h5>
+                        <strong>
+                           <center>Ours</center>
+                        </strong>
+                     </h5>
+                  </div>
+                  <div class="column is-one-third-desktop is-one-third-tablet is-one-third-mobile has-text-centered">
+                     <div class="hyper-grid-wrapper">
+                        <div class="hyper-ref-rgb">
+                           <img id="focal_grid2" style="width: 100%" src="./static/images/"/>
+                        </div>
+                     </div>
+                     <h5>
+                        <strong>
+                           <center>Fried+</center>
+                        </strong>
+                     </h5>
+                  </div>
+               </div>
+            </div>
           </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section hero">
-  <div class="container is-max-desktop">
-
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
-        <div class="content has-text-justified">
-          <p>
-          Close-up facial images captured at very close distances can often suffer from perspective distortion, resulting in unnatural and unattractive appearances. 
-          In this paper, we propose a new approach for correcting perspective distortions in a single close-up face using perspective-aware 3D GAN inversion. 
-          We first use pre-trained 3D GAN to perform inversion on perspective-distorted close-up facial images. 
-          Re-rendering the portrait at proper focal length and camera distance effectively correct these distortions and produce more natural-looking results. 
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- <hr> -->
-
-<section class="section">
-
-  <div class='container is-max-desktop'>
-
-  <h2 class="title is-3">More results</h2>
-
-  <div class="content">
-  <h3 class="title is-4">Correct our collected in-the-wild images</h3>
-  <div class="row" id="">
-            <div class="columns">
-            <!-- <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-                <img src="static/images/Wild/ct2-CGSVRN.png" class='galleryImg  selected ' style="width:100%" onmouseover="hover(this);" onmouseout="hoverOut(this)">
-            </div> -->
-            <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-                <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
-                  <source src="./static/images/Wild/ct2-CGSVRN_ours.mp4"
-                    type="video/mp4">
-                </video>
-            </div>
-            <!-- <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-                <img src="static/images/Wild/tp1-PAFAEH.png" class='galleryImg ' style="width:100%" onmouseover="hover(this);" onmouseout="hoverOut(this)">
-            </div> -->
-            <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-                <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
-                  <source src="./static/images/Wild/tp1-PAFAEH_ours.mp4"
-                    type="video/mp4">
-                </video>
-            </div>
-            <!-- <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-                <img src="static/images/Wild/tp0-RWHPIX.png" class='galleryImg ' style="width:100%" onmouseover="hover(this);" onmouseout="hoverOut(this)">
-            </div> -->
-            <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-                <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
-                  <source src="./static/images/Wild/tp0-RWHPIX_ours.mp4"
-                    type="video/mp4">
-                </video>
-            </div>
-            <!-- <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-                <img src="static/images/Wild/np2-ZBDKCJ.png" class='galleryImg ' style="width:100%" onmouseover="hover(this);" onmouseout="hoverOut(this)">
-            </div> -->
-            <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-                <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
-                  <source src="./static/images/Wild/np2-ZBDKCJ_ours.mp4"
-                    type="video/mp4">
-                </video>
-            </div>
-            <!-- <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-                <img src="static/images/Wild/np7-LBIDIJ.png" class='galleryImg ' style="width:100%" onmouseover="hover(this);" onmouseout="hoverOut(this)">
-            </div> -->
-            <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-                <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
-                  <source src="./static/images/Wild/np7-LBIDIJ_ours.mp4"
-                    type="video/mp4">
-                </video>
-            </div>
-        </div>
-        </div>
-        <div class="row" id="">
-        <div class="columns">
-            <!-- div class="column is-one-fifth-desktop is-one-fifth-tablet">
-                <img src="static/images/Wild/np6-ZRSUNQ.png" class='galleryImg  selected ' style="width:100%" onmouseover="hover(this);" onmouseout="hoverOut(this)">
-            </div> -->
-            <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-                <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
-                  <source src="./static/images/Wild/np6-ZRSUNQ_ours.mp4"
-                    type="video/mp4">
-                </video>
-            </div>
-            <!-- <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-                <img src="static/images/Wild/np1-JYEFHB.png" class='galleryImg  selected ' style="width:100%" onmouseover="hover(this);" onmouseout="hoverOut(this)">
-            </div> -->
-            <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-                <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
-                  <source src="./static/images/Wild/np1-JYEFHB_ours.mp4"
-                    type="video/mp4">
-                </video>
-            </div>
-            <!-- <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-                <img src="static/images/Wild/ct3-GLGJJW.png" class='galleryImg  selected ' style="width:100%" onmouseover="hover(this);" onmouseout="hoverOut(this)">
-            </div> -->
-            <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-                <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
-                  <source src="./static/images/Wild/ct3-GLGJJW_ours.mp4"
-                    type="video/mp4">
-                </video>
-            </div>
-            <!-- <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-                <img src="static/images/Wild/x20-VNOEMX.png" class='galleryImg  selected ' style="width:100%" onmouseover="hover(this);" onmouseout="hoverOut(this)">
-            </div> -->
-            <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-                <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
-                  <source src="./static/images/Wild/x20-VNOEMX_ours.mp4"
-                    type="video/mp4">
-                </video>
-            </div>
-            <!-- <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-                <img src="static/images/Wild/x19-PFHBBG.png" class='galleryImg  selected ' style="width:100%" onmouseover="hover(this);" onmouseout="hoverOut(this)">
-            </div> -->
-            <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-                <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
-                  <source src="./static/images/Wild/x19-PFHBBG_ours.mp4"
-                    type="video/mp4">
-                </video>
-            </div>
-        </div>
-      </div>
-        <div class="row" id="">
-        <div class="columns">
-            <!-- <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-                <img src="static/images/Wild/np10-CXQFYN.png" class='galleryImg  selected ' style="width:100%" onmouseover="hover(this);" onmouseout="hoverOut(this)">
-            </div> -->
-            <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-                <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
-                  <source src="./static/images/Wild/np10-CXQFYN_ours.mp4"
-                    type="video/mp4">
-                </video>
-            </div>
-            <!-- <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-                <img src="static/images/Wild/x3-VHQTSI.png" class='galleryImg  selected ' style="width:100%" onmouseover="hover(this);" onmouseout="hoverOut(this)">
-            </div> -->
-            <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-                <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
-                  <source src="./static/images/Wild/x3-VHQTSI_ours.mp4"
-                    type="video/mp4">
-                </video>
-            </div>
-            <!-- <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-                <img src="static/images/Wild/x17-JVSNDO.png" class='galleryImg  selected ' style="width:100%" onmouseover="hover(this);" onmouseout="hoverOut(this)">
-            </div> -->
-            <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-                <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
-                  <source src="./static/images/Wild/x17-JVSNDO_ours.mp4"
-                    type="video/mp4">
-                </video>
-            </div>
-            <!-- <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-                <img src="static/images/Wild/x36-RIVJAK.png" class='galleryImg  selected ' style="width:100%" onmouseover="hover(this);" onmouseout="hoverOut(this)">
-            </div> -->
-            <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-                <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
-                  <source src="./static/images/Wild/x36-RIVJAK_ours.mp4"
-                    type="video/mp4">
-                </video>
-            </div>
-            <!-- <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-                <img src="static/images/Wild/x21-DYTTRM.png" class='galleryImg  selected ' style="width:100%" onmouseover="hover(this);" onmouseout="hoverOut(this)">
-            </div> -->
-            <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-                <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
-                  <source src="./static/images/Wild/x21-DYTTRM_ours.mp4"
-                    type="video/mp4">
-                </video>
-            </div>
-        </div>
-      </div>
-      <div class="row" id="">
-        <div class="columns">
-            <!-- <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-                <img src="static/images/Wild/x25-YFOSCZ.png" class='galleryImg  selected ' style="width:100%" onmouseover="hover(this);" onmouseout="hoverOut(this)">
-            </div> -->
-            <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-                <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
-                  <source src="./static/images/Wild/x25-YFOSCZ_ours.mp4"
-                    type="video/mp4">
-                </video>
-            </div>
-            <!-- <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-                <img src="static/images/Wild/x28-LBFFPD.png" class='galleryImg  selected ' style="width:100%" onmouseover="hover(this);" onmouseout="hoverOut(this)">
-            </div> -->
-            <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-                <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
-                  <source src="./static/images/Wild/x28-LBFFPD_ours.mp4"
-                    type="video/mp4">
-                </video>
-            </div>
-            <!-- <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-                <img src="static/images/Wild/x39-HLEYJC.png" class='galleryImg  selected ' style="width:100%" onmouseover="hover(this);" onmouseout="hoverOut(this)">
-            </div> -->
-            <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-                <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
-                  <source src="./static/images/Wild/x39-HLEYJC_ours.mp4"
-                    type="video/mp4">
-                </video>
-            </div>
-            <!-- <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-                <img src="static/images/Wild/x26-FVPOQG.png" class='galleryImg  selected ' style="width:100%" onmouseover="hover(this);" onmouseout="hoverOut(this)">
-            </div> -->
-            <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-                <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
-                  <source src="./static/images/Wild/x26-FVPOQG_ours.mp4"
-                    type="video/mp4">
-                </video>
-            </div>
-            <!-- <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-                <img src="static/images/Wild/x16-CWOEGT.png" class='galleryImg  selected ' style="width:100%" onmouseover="hover(this);" onmouseout="hoverOut(this)">
-            </div> -->
-            <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-                <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
-                  <source src="./static/images/Wild/x16-CWOEGT_ours.mp4"
-                    type="video/mp4">
-                </video>
-            </div>
-        </div>
-      </div>
-  </div>
-
-  <div class="content">
-<!--       <h4 class="title is-4">
-  Comparisons on our collected images
-      </h4> -->
-    <div class="columns is-centered is-mobile">
-      <div class="column is-full-mobile is-four-fifths-tablet is-four-fifths-desktop has-text-left is-narrow" style="max-height:365px">
-      </div>
-    </div>
-
-    <!-- <div class=""> -->
-    <div class="columns adjustx is-centered is-mobile is-vcentered">
-
-      <div class="column is-one-third has-text-centered">
-        <div class="columns is-centered is-vcentered is-mobile">
-      <div class="column is-narrow is-2" style="padding: 0rem">
-                 <img width="500%" src="static/icons/avatar_2.png"/>
-           </div>
-      <div class="column is-8">
-            <input class="slider is-fullwidth is-small"
-                   id="face-slider"
-                   step="1" min="0" max="19" value="0" type="range">
-      </div>
-            <!-- <output for="sliderWithValue">20</output> -->
-          <!-- <div class="column is-narrow is-2" style="padding: 0rem">
-                 <img width="500%" src="static/icons/avatar_2.png"/>
-           </div> -->
-  </div>
-  <!-- <div class="column is-1 has-text-centered"></div> -->
-
-  </div>
-    <!-- <div class="columns is-centered is-mobile"> -->
-      <div class="column is-one-third has-text-centered">
-     <!-- <p style="font-size: small">Try it yourself: move the slider to adjust the focal length of the camera.</p> -->
-
-       <div class="columns  is-centered is-vcentered is-mobile">
-          <div class="column is-narrow is-1" style="padding: 0rem">
-                <img width="500%" src="static/icons/fov_1.png"/>
-          </div>
-          <div class="column is-8">
-            <input class="slider is-fullwidth is-small"
-                   id="focal-slider"
-                   step="1" min="0" max="49" value="0" type="range">
-          </div>
-          <!-- <div class="column is-narrow is-1" style="padding: 0rem">
-                 <img width="500%" src="static/icons/fov_2.png"/>
-           </div> -->
-      </div>
-    </div>
-    <!-- </div>  -->
-    </div>
-    <div class="columns is-centered is-mobile">
-      <div class="column is-one-third-desktop is-one-third-tablet is-one-third-mobile has-text-centered">
+            <div class="content">
+               <h3 class="title is-4">Correct images from <a href="https://github.com/bearjoy730/Learning-Perspective-Undistortion-of-Portraits">Zhao's Dataset</a></h3>
+               <div class="columns is-centered is-mobile is-vcentered">
+                  <div class="column is-one-third has-text-centered">
+                     <div class="columns is-centered is-vcentered is-mobile">
+                        <div class="column is-narrow is-2" style="padding: 0rem">
+                           <img width="500%" src="static/icons/avatar_2.png"/>
+                        </div>
+                        <div class="column is-8">
+                           <input class="slider is-fullwidth is-small"
+                              id="face-slider-zhao"
+                              step="1" min="0" max="19" value="0" type="range">
+                        </div>
+                     </div>
+                  </div>
+                  <div class="column is-one-third has-text-centered">
+                     <!-- <p style="font-size: small">Try it yourself: move the slider to adjust the focal length of the camera.</p> -->
+                     <div class="columns  is-centered is-vcentered is-mobile">
+                        <div class="column is-narrow is-1" style="padding: 0rem">
+                           <img width="500%" src="static/icons/fov_1.png"/>
+                        </div>
+                        <div class="column is-8">
+                           <input class="slider is-fullwidth is-small"
+                              id="focal-slider-zhao"
+                              step="1" min="0" max="49" value="0" type="range">
+                        </div>
+                     </div>
+                  </div>
+               </div>
+              <div class="columns is-centered is-mobile">
+      <div class="column is-one-quarter-desktop is-one-quarter-tablet is-half-mobile has-text-centered">
         <div class="hyper-grid-wrapper">
           <div class="hyper-ref-rgb">
-            <img id="focal_grid0" style="width: 100%" src="./static/images/"/>
+            <img id="focal_grid0" style="width: 100%" src="./static/images/Zhao/x8-NYGSLL.png"/>
           </div>
         </div>
           <h5><strong><center>Input</center></strong></h5>
       </div>
-      <div class="column is-one-third-desktop is-one-third-tablet is-one-third-mobile has-text-centered">
+      <div class="column is-one-quarter-desktop is-one-quarter-tablet is-half-mobile has-text-centered">
         <div class="hyper-grid-wrapper">
           <div class="hyper-grid-rgb">
-            <img id="focal_grid1" style="width: 100%" src="./static/images/"/>
+            <img id="focal_grid1" style="width: 5000%" src="./static/images/Zhao/x8-NYGSLL_ours_dolly.png"/>
           </div>
         </div>
         <h5><strong><center>Ours</center></strong></h5>
       </div>
-      <div class="column is-one-third-desktop is-one-third-tablet is-one-third-mobile has-text-centered">
+      <div class="column is-one-quarter-desktop is-one-quarter-tablet is-half-mobile has-text-centered">
         <div class="hyper-grid-wrapper">
           <div class="hyper-ref-rgb">
-            <img id="focal_grid2" style="width: 100%" src="./static/images/"/>
+            <img id="focal_grid2" style="width: 100%" src="./static/images/Zhao/1FPP-060329_2.png"/>
           </div>
         </div>
         <h5><strong><center>Fried+</center></strong></h5>
       </div>
-    </div>
-</div>
-    <hr>
-
-    <div class="content">
-    <h3 class="title is-4">Correct images from <a href="https://data.caltech.edu/records/n5vnm-mqr05">CMDP</a></h3>
-    <div class="row">
-        <div class="columns">
-            <!-- <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-                <img src="./static/images/CMDP/7WUF-060329_2.png" class='galleryImg  selected ' style="width:100%" onmouseover="hover(this);" onmouseout="hoverOut(this)">
-            </div> -->
-            <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-                <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
-                  <source src="./static/images/CMDP/7WUF-060329_2_ours.mp4"
-                    type="video/mp4">
-                </video>
-            </div>
-            <!-- <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-                <img src="./static/images/CMDP/1FPP-060329_2.png" class='galleryImg  selected ' style="width:100%" onmouseover="hover(this);" onmouseout="hoverOut(this)">
-            </div> -->
-            <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-                <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
-                  <source src="./static/images/CMDP/1FPP-060329_2_ours.mp4"
-                    type="video/mp4">
-                </video>
-            </div>
-            <!-- <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-                <img src="./static/images/CMDP/WWGO-060329_2.png" class='galleryImg  selected ' style="width:100%" onmouseover="hover(this);" onmouseout="hoverOut(this)">
-            </div> -->
-            <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-                <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
-                  <source src="./static/images/CMDP/WWGO-060329_2_ours.mp4"
-                    type="video/mp4">
-                </video>
-            </div>
-            <!-- <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-                <img src="./static/images/CMDP/XWQM-060208_2.png" class='galleryImg  selected ' style="width:100%" onmouseover="hover(this);" onmouseout="hoverOut(this)">
-            </div> -->
-            <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-                <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
-                  <source src="./static/images/CMDP/XWQM-060208_2_ours.mp4"
-                    type="video/mp4">
-                </video>
-            </div>
-            <!-- <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-                <img src="./static/images/CMDP/QZGT-060329_2.png" class='galleryImg  selected ' style="width:100%" onmouseover="hover(this);" onmouseout="hoverOut(this)">
-            </div> -->
-            <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-                <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
-                  <source src="./static/images/CMDP/QZGT-060329_2_ours.mp4"
-                    type="video/mp4">
-                </video>
-            </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="columns">
-            <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-                <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
-                  <source src="./static/images/CMDP/5ZAZ-060208_2_ours.mp4"
-                    type="video/mp4">
-                </video>
-            </div>
-            <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-                <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
-                  <source src="./static/images/CMDP/J6XX-060208_2_ours.mp4"
-                    type="video/mp4">
-                </video>
-            </div>
-            <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-                <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
-                  <source src="./static/images/CMDP/FHNJ-060329_2_ours.mp4"
-                    type="video/mp4">
-                </video>
-            </div>
-            <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-                <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
-                  <source src="./static/images/CMDP/VND0-060329_2_ours.mp4"
-                    type="video/mp4">
-                </video>
-            </div>
-            <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-                <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
-                  <source src="./static/images/CMDP/9QAD-050615_2_ours.mp4"
-                    type="video/mp4">
-                </video>
-            </div>
-        </div>
-      </div> <!-- end of row -->
-      <div class="row">
-        <div class="columns">
-            <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-                <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
-                  <source src="./static/images/CMDP/8S7R-060329_2_ours.mp4"
-                    type="video/mp4">
-                </video>
-            </div>
-            <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-                <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
-                  <source src="./static/images/CMDP/RXZN-060208_2_ours.mp4"
-                    type="video/mp4">
-                </video>
-            </div>
-            <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-                <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
-                  <source src="./static/images/CMDP/23UG-060329_2_ours.mp4"
-                    type="video/mp4">
-                </video>
-            </div>
-            <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-                <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
-                  <source src="./static/images/CMDP/QHTL-060329_2_ours.mp4"
-                    type="video/mp4">
-                </video>
-            </div>
-            <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-                <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
-                  <source src="./static/images/CMDP/FPOG-060329_2_ours.mp4"
-                    type="video/mp4">
-                </video>
-            </div>
-        </div>
-      </div> <!-- end of row -->
-      <div class="row">
-        <div class="columns">
-            <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-                <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
-                  <source src="./static/images/CMDP/WHO1-060329_2_ours.mp4"
-                    type="video/mp4">
-                </video>
-            </div>
-            <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-                <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
-                  <source src="./static/images/CMDP/92RT-050419_2_ours.mp4"
-                    type="video/mp4">
-                </video>
-            </div>
-            <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-                <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
-                  <source src="./static/images/CMDP/3XKB-060208_2_ours.mp4"
-                    type="video/mp4">
-                </video>
-            </div>
-            <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-                <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
-                  <source src="./static/images/CMDP/QQXY-060329_2_ours.mp4"
-                    type="video/mp4">
-                </video>
-            </div>
-            <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-                <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
-                  <source src="./static/images/CMDP/535X-060329_2_ours.mp4"
-                    type="video/mp4">
-                </video>
-            </div>
-        </div>
-      </div><!--   end of row -->
-      <div class="row">
-        <div class="columns">
-            <!-- <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-                <img src="./static/images/CMDP/7WUF-060329_2.png" class='galleryImg  selected ' style="width:100%" onmouseover="hover(this);" onmouseout="hoverOut(this)">
-            </div> -->
-            <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-                <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
-                  <source src="./static/images/CMDP/JFZC-050419_2_ours.mp4"
-                    type="video/mp4">
-                </video>
-            </div>
-            <!-- <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-                <img src="./static/images/CMDP/1FPP-060329_2.png" class='galleryImg  selected ' style="width:100%" onmouseover="hover(this);" onmouseout="hoverOut(this)">
-            </div> -->
-            <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-                <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
-                  <source src="./static/images/CMDP/X5FH-050622_2_ours.mp4"
-                    type="video/mp4">
-                </video>
-            </div>
-            <!-- <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-                <img src="./static/images/CMDP/WWGO-060329_2.png" class='galleryImg  selected ' style="width:100%" onmouseover="hover(this);" onmouseout="hoverOut(this)">
-            </div> -->
-            <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-                <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
-                  <source src="./static/images/CMDP/9UL2-050611_2_ours.mp4"
-                    type="video/mp4">
-                </video>
-            </div>
-            <!-- <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-                <img src="./static/images/CMDP/XWQM-060208_2.png" class='galleryImg  selected ' style="width:100%" onmouseover="hover(this);" onmouseout="hoverOut(this)">
-            </div> -->
-            <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-                <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
-                  <source src="./static/images/CMDP/R77S-060329_2_ours.mp4"
-                    type="video/mp4">
-                </video>
-            </div>
-            <!-- <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-                <img src="./static/images/CMDP/QZGT-060329_2.png" class='galleryImg  selected ' style="width:100%" onmouseover="hover(this);" onmouseout="hoverOut(this)">
-            </div> -->
-            <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-                <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
-                  <source src="./static/images/CMDP/K36K-060208_2_ours.mp4"
-                    type="video/mp4">
-                </video>
-            </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="columns">
-            <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-                <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
-                  <source src="./static/images/CMDP/XOPC-060329_2_ours.mp4"
-                    type="video/mp4">
-                </video>
-            </div>
-            <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-                <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
-                  <source src="./static/images/CMDP/ALMI-060208_2_ours.mp4"
-                    type="video/mp4">
-                </video>
-            </div>
-            <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-                <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
-                  <source src="./static/images/CMDP/K5AT-050611_2_ours.mp4"
-                    type="video/mp4">
-                </video>
-            </div>
-            <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-                <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
-                  <source src="./static/images/CMDP/AMOH-060329_2_ours.mp4"
-                    type="video/mp4">
-                </video>
-            </div>
-            <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-                <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
-                  <source src="./static/images/CMDP/60R0-060329_2_ours.mp4"
-                    type="video/mp4">
-                </video>
-            </div>
-        </div>
-      </div> <!-- end of row -->
-      <div class="row">
-        <div class="columns">
-            <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-                <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
-                  <source src="./static/images/CMDP/S36F-050611_2_ours.mp4"
-                    type="video/mp4">
-                </video>
-            </div>
-            <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-                <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
-                  <source src="./static/images/CMDP/62RT-060329_2_ours.mp4"
-                    type="video/mp4">
-                </video>
-            </div>
-            <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-                <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
-                  <source src="./static/images/CMDP/KKMI-060329_2_ours.mp4"
-                    type="video/mp4">
-                </video>
-            </div>
-            <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-                <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
-                  <source src="./static/images/CMDP/YWXB-060329_2_ours.mp4"
-                    type="video/mp4">
-                </video>
-            </div>
-            <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-                <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
-                  <source src="./static/images/CMDP/B4IY-050419_2_ours.mp4"
-                    type="video/mp4">
-                </video>
-            </div>
-        </div>
-      </div> <!-- end of row -->
-      <div class="row">
-        <div class="columns">
-            <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-                <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
-                  <source src="./static/images/CMDP/SDCQ-060329_2_ours.mp4"
-                    type="video/mp4">
-                </video>
-            </div>
-            <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-                <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
-                  <source src="./static/images/CMDP/73MC-050615_2_ours.mp4"
-                    type="video/mp4">
-                </video>
-            </div>
-            <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-                <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
-                  <source src="./static/images/CMDP/Z7QW-060208_2_ours.mp4"
-                    type="video/mp4">
-                </video>
-            </div>
-            <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-                <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
-                  <source src="./static/images/CMDP/BHSN-050615_2_ours.mp4"
-                    type="video/mp4">
-                </video>
-            </div>
-            <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-                <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
-                  <source src="./static/images/CMDP/535X-060329_2_ours.mp4"
-                    type="video/mp4">
-                </video>
-            </div>
-        </div>
-      </div><!--   end of row -->
-      <div class="row">
-        <div class="columns">
-            <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-                <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
-                  <source src="./static/images/CMDP/T6D7-060329_2_ours.mp4"
-                    type="video/mp4">
-                </video>
-            </div>
-            <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-                <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
-                  <source src="./static/images/CMDP/7FNY-060329_2_ours.mp4"
-                    type="video/mp4">
-                </video>
-            </div>
-            <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-                <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
-                  <source src="./static/images/CMDP/MSX9-060329_2_ours.mp4"
-                    type="video/mp4">
-                </video>
-            </div>
-            <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-                <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
-                  <source src="./static/images/CMDP/ZBZP-050611_2_ours.mp4"
-                    type="video/mp4">
-                </video>
-            </div>
-            <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-                <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
-                  <source src="./static/images/CMDP/BUP6-060329_2_ours.mp4"
-                    type="video/mp4">
-                </video>
-            </div>
-        </div>
-      </div> <!-- end of row -->
-      <div class="row">
-        <div class="columns">
-            <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-                <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
-                  <source src="./static/images/CMDP/UYGI-060329_2_ours.mp4"
-                    type="video/mp4">
-                </video>
-            </div>
-            <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-                <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
-                  <source src="./static/images/CMDP/7IVG-060208_2_ours.mp4"
-                    type="video/mp4">
-                </video>
-            </div>
-            <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-                <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
-                  <source src="./static/images/CMDP/NRRD-060208_2_ours.mp4"
-                    type="video/mp4">
-                </video>
-            </div>
-            <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-                <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
-                  <source src="./static/images/CMDP/ENGX-060208_2_ours.mp4"
-                    type="video/mp4">
-                </video>
-            </div>
-            <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-                <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
-                  <source src="./static/images/CMDP/VIMC-050615_2_ours.mp4"
-                    type="video/mp4">
-                </video>
-            </div>
-        </div>
-      </div><!--   end of row -->
-    </div>
-
-    <hr>
-
-    <div class="content">
-    <h3 class="title is-4">Correct images from <a href="https://github.com/bearjoy730/Learning-Perspective-Undistortion-of-Portraits">Zhao's Dataset</a></h3>
-    <div class="row">
-        <div class="columns">
-            <!-- <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-                <img src="./static/images/Zhao/x14-FJHAPL.png" class='galleryImg  selected ' style="width:100%" onmouseover="hover(this);" onmouseout="hoverOut(this)">
-            </div> -->
-            <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-                <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
-                  <source src="./static/images/Zhao/x14-FJHAPL_ours.mp4"
-                    type="video/mp4">
-                </video>
-            </div>
-            <!-- <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-                <img src="./static/images/Zhao/x5-XDTZRN.png" class='galleryImg  selected ' style="width:100%" onmouseover="hover(this);" onmouseout="hoverOut(this)">
-            </div> -->
-            <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-                <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
-                  <source src="./static/images/Zhao/x5-XDTZRN_ours.mp4"
-                    type="video/mp4">
-                </video>
-            </div>
-            <!-- <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-                <img src="./static/images/Zhao/x9-GHBTYP.png" class='galleryImg  selected ' style="width:100%" onmouseover="hover(this);" onmouseout="hoverOut(this)">
-            </div> -->
-            <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-                <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
-                  <source src="./static/images/Zhao/x9-GHBTYP_ours.mp4"
-                    type="video/mp4">
-                </video>
-            </div>
-            <!-- <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-                <img src="./static/images/Zhao/x1-WDVURU.png" class='galleryImg  selected ' style="width:100%" onmouseover="hover(this);" onmouseout="hoverOut(this)">
-            </div> -->
-            <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-                <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
-                  <source src="./static/images/Zhao/x1-WDVURU_ours.mp4"
-                    type="video/mp4">
-                </video>
-            </div>
-            <!-- <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-                <img src="./static/images/Zhao/x13-ABTDLR.png" class='galleryImg  selected ' style="width:100%" onmouseover="hover(this);" onmouseout="hoverOut(this)">
-            </div> -->
-            <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-                <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
-                  <source src="./static/images/Zhao/x13-ABTDLR_ours.mp4"
-                    type="video/mp4">
-                </video>
-            </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="columns">
-            <!-- <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-                <img src="./static/images/Zhao/x8-NYGSLL.png" class='galleryImg  selected ' style="width:100%" onmouseover="hover(this);" onmouseout="hoverOut(this)">
-            </div> -->
-            <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-                <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
-                  <source src="./static/images/Zhao/x8-NYGSLL_ours.mp4"
-                    type="video/mp4">
-                </video>
-            </div>
-            <!-- <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-                <img src="./static/images/Zhao/x7-OXFJXM.png" class='galleryImg  selected ' style="width:100%" onmouseover="hover(this);" onmouseout="hoverOut(this)">
-            </div> -->
-            <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-                <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
-                  <source src="./static/images/Zhao/x7-OXFJXM_ours.mp4"
-                    type="video/mp4">
-                </video>
-            </div>
-            <!-- <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-                <img src="./static/images/Zhao/x11-SNSEER.png" class='galleryImg  selected ' style="width:100%" onmouseover="hover(this);" onmouseout="hoverOut(this)">
-            </div> -->
-            <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-                <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
-                  <source src="./static/images/Zhao/x11-SNSEER_ours.mp4"
-                    type="video/mp4">
-                </video>
-            </div>
-            <!-- <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-                <img src="./static/images/Zhao/x10-UFQKEA.png" class='galleryImg  selected ' style="width:100%" onmouseover="hover(this);" onmouseout="hoverOut(this)">
-            </div> -->
-            <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-                <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
-                  <source src="./static/images/Zhao/x10-UFQKEA_ours.mp4"
-                    type="video/mp4">
-                </video>
-            </div>
-            <!-- <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-                <img src="./static/images/Zhao/x30-OZZPJT.png" class='galleryImg  selected ' style="width:100%" onmouseover="hover(this);" onmouseout="hoverOut(this)">
-            </div> -->
-            <div class="column is-one-fifth-desktop is-one-fifth-tablet">
-                <video poster="" id="" autoplay controls muted loop playsinline webkit-playsinline height="100%">
-                  <source src="./static/images/Zhao/x30-OZZPJT_ours.mp4"
-                    type="video/mp4">
-                </video>
-            </div>
-        </div>
-      </div>
-      <div class="columns adjustx is-centered is-mobile is-vcentered">
-
-      <div class="column is-one-third has-text-centered">
-        <div class="columns is-centered is-vcentered is-mobile">
-      <div class="column is-narrow is-2" style="padding: 0rem">
-                 <img width="500%" src="static/icons/avatar_2.png"/>
-           </div>
-      <div class="column is-8">
-            <input class="slider is-fullwidth is-small"
-                   id="face-slider-zhao"
-                   step="1" min="0" max="19" value="0" type="range">
-      </div>
-  </div>
-
-
-  </div>
-      <div class="column is-one-third has-text-centered">
-     <!-- <p style="font-size: small">Try it yourself: move the slider to adjust the focal length of the camera.</p> -->
-
-       <div class="columns  is-centered is-vcentered is-mobile">
-          <div class="column is-narrow is-1" style="padding: 0rem">
-                <img width="500%" src="static/icons/fov_1.png"/>
-          </div>
-          <div class="column is-8">
-            <input class="slider is-fullwidth is-small"
-                   id="focal-slider-zhao"
-                   step="1" min="0" max="49" value="0" type="range">
-          </div>
-      </div>
-    </div>
-    </div>
-    <div class="columns is-centered is-mobile">
-      <div class="column is-one-third-desktop is-one-third-tablet is-one-third-mobile has-text-centered">
+      <div class="column is-one-quarter-desktop is-one-quarter-tablet is-half-mobile has-text-centered">
         <div class="hyper-grid-wrapper">
           <div class="hyper-ref-rgb">
-            <img id="zhao_grid0" style="width: 100%" src="./static/images/"/>
+            <img id="focal_grid3" style="width: 100%" src="./static/images/Zhao/1FPP-060329_2.png"/>
           </div>
         </div>
-          <h5><strong><center>Input</center></strong></h5>
-      </div>
-      <div class="column is-one-third-desktop is-one-third-tablet is-one-third-mobile has-text-centered">
-        <div class="hyper-grid-wrapper">
-          <div class="hyper-grid-rgb">
-            <img id="zhao_grid1" style="width: 100%" src="./static/images/"/>
-          </div>
-        </div>
-        <h5><strong><center>Ours</center></strong></h5>
-      </div>
-      <div class="column is-one-third-desktop is-one-third-tablet is-one-third-mobile has-text-centered">
-        <div class="hyper-grid-wrapper">
-          <div class="hyper-ref-rgb">
-            <img id="zhao_grid2" style="width: 100%" src="./static/images/"/>
-          </div>
-        </div>
-        <h5><strong><center>Fried+</center></strong></h5>
+        <h5><strong><center>Zhao</center></strong></h5>
       </div>
     </div>
-
-    </div> <!-- end of content -->
-
-</div>
-</section>
-
-
-<hr/>
-
-<section class="section" id="acknowledgements">
-  <div class="container content is-max-desktop">
-    <p> The website design is adapted from <a href="https://grail.cs.washington.edu/projects/sunstage/">SunStage</a>.
-  </div>
-</section>
-
-<!-- <script type="text/javascript" src="./static/slick/slick.min.js"></script> -->
-</body>
+            </div>
+            <!-- end of content -->
+         </div>
+      </section>
+      <hr/>
+      <section class="section" id="acknowledgements">
+         <div class="container content is-max-desktop">
+            <p> The website design is adapted from <a href="https://grail.cs.washington.edu/projects/sunstage/">SunStage</a>.
+         </div>
+      </section>
+      <script type="text/javascript" src="./static/slick/slick.min.js"></script>
+   </body>
 </html>

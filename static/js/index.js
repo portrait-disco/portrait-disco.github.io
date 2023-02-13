@@ -14,14 +14,8 @@ $(document).ready(function() {
 
     });
 
-    // $('.results-carousel').slick({
-    //   dots: true,
-    //   infinite: true,
-    //   speed: 300,
-    //   slidesToShow: 1,
-    //   autoplay: true,
-    //   autoplaySpeed: 5000
-    // });
+
+    /*
     var options = {
       slidesToScroll: 1,
       slidesToShow: 3,
@@ -50,6 +44,19 @@ $(document).ready(function() {
         console.log(state);
       });
     }
+    */
+
+
+     $('.results-carousel').slick({
+      dots: true,
+      infinite: true,
+      speed: 300,
+      slidesToShow: 1,
+      autoplay: true,
+      centerMode: true,
+      autoplaySpeed: 3000,
+      variableWidth: true
+    });
 
     $('#face-slider').on('input', function(event) {
       updateScene(this.value, '#focal_grid0', 0, $('#focal-slider').val());
