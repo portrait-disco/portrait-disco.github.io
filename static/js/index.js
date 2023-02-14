@@ -194,6 +194,7 @@ function updateScene(value, tag, k, focal) {
     console.log(value);
     // let left = value * width / num_images;
     // console.log(left);
+    $(tag).attr('src', "./static/images/Wild/");
     $(tag).attr('src', "./static/images/Wild/"+id_table[value]+methods_list[k]+".png");
     // $('#sequence_name').attr('innerHTML', ": "+id_table[value]+"&nbsp;");
     // document.getElementById("sequence_name").innerHTML = id_table[value].slice(0, -2);+"&nbsp;";
@@ -218,34 +219,13 @@ function updateSceneCMDP(value, tag, k) {
     console.log(value);
     // let left = value * width / num_images;
     // console.log(left);
+    $(tag).attr('src', "./static/images/CMDP/");
     $(tag).attr('src', "./static/images/CMDP/"+id_table[value]+methods_list[k]+".png");
     // $('#sequence_name').attr('innerHTML', ": "+id_table[value]+"&nbsp;");
     // document.getElementById("sequence_name").innerHTML = id_table[value].slice(0, -2);+"&nbsp;";
     // document.getElementById("frame-idx").innerHTML =  ("00"+String(Number(value)+1)).slice(-2);
 }
 
-function updateSceneM(value, tag, k, focal) {
-    // 'tp3-CTTSKA', 
-    // 'tp4-DOEGEL', 
-     // 'x35-JFUJTJ'
-     // 'tp0-MSBXWE', 'np9-EYBFBI', 'np16-SPKCNT', 'np9-EYBFBI',  
-    var id_table = id_table_0;
-    // var methods_list = ['','_ours_dolly','_fried_dolly','_ref']
-    var methods_list = ['','_ours_dolly','_fried'];
-    //$(tag).height(Math.round($(tag).height()))
-    // width = $(tag)[0].getBoundingClientRect().width
-    // naturalwidth= $(tag)[0].naturalWidth;
-    // num_images = naturalwidth/512.0;
-    // console.log(width);
-    // console.log(naturalwidth);
-    // console.log(value);
-    // let left = value * width / num_images;
-    // console.log(left);
-    $(tag).attr('src', "./static/images/Wild/"+id_table[value]+methods_list[k]+'/'+String(focal)+".png");
-    // $('#sequence_name').attr('innerHTML', ": "+id_table[value]+"&nbsp;");
-    // document.getElementById("sequence_name").innerHTML = id_table[value].slice(0, -2);+"&nbsp;";
-    // document.getElementById("frame-idx").innerHTML =  ("00"+String(Number(value)+1)).slice(-2);
-}
 
 
 function updateImageWhole(value, tag) {

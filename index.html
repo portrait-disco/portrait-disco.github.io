@@ -807,7 +807,7 @@ We believe it has the potential to be widely adopted in various applications.
 
 
             <h3 class="title is-4">Comparisons</h3>
-            <div class="notification hero">
+            <div class="notification hero is-light">
               <div class="">
             <div class="content">
                 <p class="has-text-centered">Visual comparisons on our collected images</p>
@@ -844,7 +844,7 @@ We believe it has the potential to be widely adopted in various applications.
                      </div>
                      <h5>
                         <strong>
-                           <center>Fried+</center>
+                           <center><sup>#</sup>Fried+</center>
                         </strong>
                      </h5>
                   </div>
@@ -856,7 +856,7 @@ We believe it has the potential to be widely adopted in various applications.
                            <img width="500%" src="static/icons/avatar_2.png"/>
                         </div>
                         <div class="column is-8">
-                           <input class="slider is-fullwidth is-small"
+                           <input class="slider is-fullwidth is-small  is-warning"
                               id="face-slider"
                               step="1" min="0" max="18" value="0" type="range">
                         </div>
@@ -875,7 +875,7 @@ We believe it has the potential to be widely adopted in various applications.
                            <img width="500%" src="static/icons/fov_1.png"/>
                         </div>
                         <div class="column is-8">
-                           <input class="slider is-fullwidth is-small"
+                           <input class="slider is-fullwidth is-small  is-warning"
                               id="focal-slider-wild"
                               step="1" min="0" max="49" value="0" type="range">
                         </div>
@@ -894,7 +894,7 @@ We believe it has the potential to be widely adopted in various applications.
           <!-- <h4 class="title is-5">
                   Visual comparisons on Zhao' datset
                       </h4> -->
-          <div class="notification hero">
+          <div class="notification hero is-light">
             <div class="">
             <div class="content">
               <p class="has-text-centered">Visual comparisons on images collected by <a href="https://github.com/bearjoy730/Learning-Perspective-Undistortion-of-Portraits">Zhao+</a></p>
@@ -939,9 +939,9 @@ We believe it has the potential to be widely adopted in various applications.
                            <img width="500%" src="static/icons/avatar_2.png"/>
                         </div>
                         <div class="column is-8">
-                           <input class="slider is-fullwidth is-small"
+                           <input class="slider is-fullwidth is-small  is-warning"
                               id="face-slider-zhao"
-                              step="1" min="0" max="19" value="0" type="range">
+                              step="1" min="0" max="11" value="0" type="range">
                         </div>
                      </div>
                   </div>
@@ -952,7 +952,7 @@ We believe it has the potential to be widely adopted in various applications.
                            <img width="500%" src="static/icons/fov_1.png"/>
                         </div>
                         <div class="column is-8">
-                           <input class="slider is-fullwidth is-small"
+                           <input class="slider is-fullwidth is-small  is-warning"
                               id="focal-slider-zhao"
                               step="1" min="0" max="49" value="0" type="range">
                         </div>
@@ -963,7 +963,7 @@ We believe it has the potential to be widely adopted in various applications.
             </div>
             <!-- end of content -->
           </div> <!-- end of hero -->
-          <div class="notification hero">
+          <div class="notification hero is-light">
             <div class="">
             <div class="content">
               <p class="has-text-centered">Visual comparisons on <a href="">CMDP</a></p>
@@ -1016,7 +1016,7 @@ We believe it has the potential to be widely adopted in various applications.
                            <img width="500%" src="static/icons/avatar_2.png"/>
                         </div>
                         <div class="column is-8">
-                           <input class="slider is-fullwidth is-small"
+                           <input class="slider is-fullwidth is-small  is-warning"
                               id="face-slider-cmdp"
                               step="1" min="0" max="42" value="0" type="range">
                         </div>
@@ -1024,12 +1024,44 @@ We believe it has the potential to be widely adopted in various applications.
                   </div>
                </div>
   </div>
+            </div> <!-- end of content -->
+          </div> <!-- end of hero -->
+
+          <div class="notification hero is-light">
+            <div class="">
+            <div class="content">
+              <p class="has-text-centered">Quantitative comparisons on <a href="">CMDP</a></p>
+        <div class="">
+          <div class="">
+            <img id="z" style="width: 100%" src="./static/images/quant.png"/>
+          </div>
+        </div>
+        <p class="has-text-centered" style="font-size: 13px">Lower is better for landmark error and LIPIPS; Higher is better for PSNR and SSIM. <sup>#</sup>Fried+ denotes Results of Fried+ is borrowed from their <a href="https://www.ohadf.com/projects/perspective-portraits/results/view_results.html">demo page</a>. Our re-implementation of Fried+. Note that although the results differ from the original ones, the metric scores are comparable.</p>
+          <!-- <h5><strong><center>Input</center></strong></h5> -->
+
             </div>
             <!-- end of content -->
           </div> <!-- end of hero -->
+
          </div>
       </section>
-      <hr/>
+      
+
+<section class="section" id="Ref">
+   <div class="container content is-max-desktop">
+      <h2 class="title">Reference</h2>
+       <ol style="font-size: 14px">
+          <li> Yajie Zhao, Zeng Huang, Tianye Li, Weikai Chen, Chloe LeGendre, Xinglei Ren, Jun Xing, Ari Shapiro, and Hao Li, Learning Perspective Undistortion of Portraits, ICCV, 2019.
+          </li>
+          <li> Ohad Fried, Eli Shechtman,
+Dan B Goldman, and Adam Finkelstein, Perspective-aware Manipulation of Portrait Photos, ACM TOG (Proc. SIGGRAPH), 2016.
+          </li>
+          <li>
+            Burgos-Artizzu, Xavier, Ronchi, Matteo Ruggero, & Perona, Pietro (2022). Caltech Multi-Distance Portraits (CMDP) (1.0) [Data set]. CaltechDATA. https://doi.org/10.22002/D1.20110
+          </li>
+          <ol>    
+   </div>
+   </section>  
 
       <section class="section" id="BibTeX">
   <div class="container content is-max-desktop">
@@ -1042,6 +1074,8 @@ We believe it has the potential to be widely adopted in various applications.
 }</code></pre>
   </div>
 </section>
+
+<hr/>
 
       <section class="section" id="acknowledgements">
          <div class="container content is-max-desktop">
