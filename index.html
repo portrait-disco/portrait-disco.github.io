@@ -4,10 +4,8 @@
       <meta charset="utf-8">
       <meta property="og:title" content="DisCO"/>
       <meta property="og:image:width" content="1200"/>
-      <meta property="og:image:height" content="630"/>
-      <meta http-equiv='cache-control' content='no-cache'>
-      <meta http-equiv='expires' content='0'>
-      <meta http-equiv='pragma' content='no-cache'>
+      <meta property="og:image:height" content="600"/>
+      <meta property="og:image" content="static/icons/disco_logo.png" />
       <title>DisCO</title>
       <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
          rel="stylesheet">
@@ -27,8 +25,6 @@
       <script src="static/js/bulma-carousel.min.js"></script>
       <script src="static/js/bulma-slider.min.js"></script>
       <script src="static/js/index.js"></script>
-      <!-- <script src="static/js/index-s.js"></script> -->
-      <script src="static/js/gallery_hover.js"></script>
    </head>
    <body>
       <section class="publication-header">
@@ -136,6 +132,18 @@
                            type="video/mp4">
                      </video>
                   </div>
+                  <div class="item item-man3">
+                     <video poster="" id="man3" autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                        <source src="./static/videos/cghf1-IDDBMZ_ours_True.mp4"
+                           type="video/mp4">
+                     </video>
+                  </div>
+                  <div class="item item-girltop">
+                     <video poster="" id="girltop" autoplay controls muted loop playsinline webkit-playsinline height="100%">
+                        <source src="./static/videos/newf2-ALEDWI_ours_True.mp4"
+                           type="video/mp4">
+                     </video>
+                  </div>
                   <div class="item item-womanclassroom">
                      <video poster="" id="womanclassroom" autoplay controls muted loop playsinline webkit-playsinline height="100%">
                         <source src="./static/videos/np16-SPKCNT_ours_True.mp4"
@@ -165,7 +173,7 @@
                         We first use pre-trained 3D GAN to perform inversion on perspective-distorted close-up facial images. 
                         Re-rendering the portrait at proper focal length and camera distance effectively correct these distortions and produce more natural-looking results. 
                         Our experiments show that our method outperforms previous approaches in terms of accuracy and visual quality. 
-We believe it has the potential to be widely adopted in various applications.
+                        We believe it has the potential to be widely adopted in various applications.
                   </div>
                </div>
             </div>
@@ -174,7 +182,7 @@ We believe it has the potential to be widely adopted in various applications.
       <!-- <hr> -->
       <section class="section">
          <div class='container is-max-desktop'>
-            <h3 class="title is-4">More results</h3>
+            <h3 class="title is-4">More results on cropped faces</h3>
             <!-- <div class="content"> -->
               <!-- <h3 class="title is-4">Correct in-the-wild images</h3> -->
               <div class="notification hero is-dark">
@@ -473,7 +481,7 @@ We believe it has the potential to be widely adopted in various applications.
                            </video>
                         </div>
                      </div>
-                     <p class="has-text-centered">Correct in-the-wild distorted images collected by <a>us</a> and by <a href="https://github.com/bearjoy730/Learning-Perspective-Undistortion-of-Portraits">Zhao+</a></p>
+                     <p class="has-text-centered">Correct in-the-wild distorted images collected by us and by <a href="https://github.com/bearjoy730/Learning-Perspective-Undistortion-of-Portraits">Zhao+</a></p>
                   </div>
               <!-- </div> -->
             <!-- </div> end of content -->
@@ -796,7 +804,7 @@ We believe it has the potential to be widely adopted in various applications.
           </div>
         <!-- </div> -->
 
-        <h3 class="title is-4">Method overview</h3>
+        <h3 class="title is-4">Method overview</h3> 
         <div class="hero">
             <div class="container">
             <div class="content">
@@ -902,7 +910,7 @@ We believe it has the potential to be widely adopted in various applications.
       <div class="column is-one-quarter-desktop is-one-quarter-tablet is-half-mobile has-text-centered">
         <div class="hyper-grid-wrapper">
           <div class="hyper-ref-rgb">
-            <img id="zhao_grid0" style="width: 100%" src="./static/images/Zhao/x8-NYGSLL.png"/>
+            <img id="zhao_grid0" style="width: 100%" src="./static/images/Zhao/x8-NYGSLL.jpg"/>
           </div>
         </div>
           <h5><strong><center>Input</center></strong></h5>
@@ -910,7 +918,7 @@ We believe it has the potential to be widely adopted in various applications.
       <div class="column is-one-quarter-desktop is-one-quarter-tablet is-half-mobile has-text-centered">
         <div class="hyper-grid-wrapper">
           <div class="hyper-grid-rgb">
-            <img id="zhao_grid1" style="width: 5000%" src="./static/images/Zhao/x8-NYGSLL_ours_dolly.png"/>
+            <img id="zhao_grid1" style="width: 5000%" src="./static/images/Zhao/x8-NYGSLL_ours.jpg"/>
           </div>
         </div>
         <h5><strong><center>Ours</center></strong></h5>
@@ -918,7 +926,7 @@ We believe it has the potential to be widely adopted in various applications.
       <div class="column is-one-quarter-desktop is-one-quarter-tablet is-half-mobile has-text-centered">
         <div class="hyper-grid-wrapper">
           <div class="hyper-ref-rgb">
-            <img id="zhao_grid2" style="width: 100%" src="./static/images/Zhao/x8-NYGSLL_Fried.png"/>
+            <img id="zhao_grid2" style="width: 100%" src="./static/images/Zhao/x8-NYGSLL_Fried.jpg"/>
           </div>
         </div>
         <h5><strong><center>Fried+</center></strong></h5>
@@ -926,7 +934,7 @@ We believe it has the potential to be widely adopted in various applications.
       <div class="column is-one-quarter-desktop is-one-quarter-tablet is-half-mobile has-text-centered">
         <div class="hyper-grid-wrapper">
           <div class="hyper-ref-rgb">
-            <img id="zhao_grid3" style="width: 100%" src="./static/images/Zhao/x8-NYGSLL_Zhao.png"/>
+            <img id="zhao_grid3" style="width: 100%" src="./static/images/Zhao/x8-NYGSLL_Zhao.jpg"/>
           </div>
         </div>
         <h5><strong><center>Zhao+</center></strong></h5>
@@ -1027,7 +1035,7 @@ We believe it has the potential to be widely adopted in various applications.
             </div> <!-- end of content -->
           </div> <!-- end of hero -->
 
-          <div class="notification hero is-light">
+          <div class="notification hero is-white">
             <div class="">
             <div class="content">
               <p class="has-text-centered">Quantitative comparisons on <a href="">CMDP</a></p>
@@ -1036,7 +1044,7 @@ We believe it has the potential to be widely adopted in various applications.
             <img id="z" style="width: 100%" src="./static/images/quant.png"/>
           </div>
         </div>
-        <p class="has-text-centered" style="font-size: 13px">Lower is better for landmark error and LIPIPS; Higher is better for PSNR and SSIM. <sup>#</sup>Fried+ denotes Results of Fried+ is borrowed from their <a href="https://www.ohadf.com/projects/perspective-portraits/results/view_results.html">demo page</a>. Our re-implementation of Fried+. Note that although the results differ from the original ones, the metric scores are comparable.</p>
+        <p class="has-text-centered" style="font-size: 13px">Lower is better for landmark error and LIPIPS; Higher is better for PSNR and SSIM. Results of Fried+ is borrowed from their <a href="https://www.ohadf.com/projects/perspective-portraits/results/view_results.html">demo page</a>. <sup>#</sup>Fried+ denotes our re-implementation of Fried+. Note that although the results differ from the original ones, the metric scores are comparable.</p>
           <!-- <h5><strong><center>Input</center></strong></h5> -->
 
             </div>
@@ -1046,6 +1054,19 @@ We believe it has the potential to be widely adopted in various applications.
          </div>
       </section>
       
+
+<section class="section" id="abl">
+   <div class='container is-max-desktop'>
+   <h3 class="title is-4">Ablation study</h3>
+   <div class="notification hero is-light">
+   <div class="">
+   <div class="content">
+   </div>
+   </div>
+   </div>
+   </div>
+
+</section>
 
 <section class="section" id="Ref">
    <div class="container content is-max-desktop">
@@ -1080,7 +1101,8 @@ Dan B Goldman, and Adam Finkelstein, Perspective-aware Manipulation of Portrait 
       <section class="section" id="acknowledgements">
          <div class="container content is-max-desktop">
             <h2 class="title">Acknowledgements</h2>
-            <p> Special thanks to <a href="https://www.yajie-zhao.com/">Yajie Zhao</a> for providing their results and data; <a href="https://www.ohadf.com/">Ohad Fried</a> for sharing their results on web.</p> 
+            <p> Special thanks to <a href="https://www.yajie-zhao.com/">Yajie Zhao</a> for providing their results and data; <a href="https://www.ohadf.com/">Ohad Fried</a> for sharing their results on web; Fangzhou Mu and Dejia Xu for their discussion and suggestions.</p> 
+            <p>Our collected in-the-wild images are from internet under <a href="https://creativecommons.org/">common creative</a>. Sources are <a href="">here</a>.</p>
             <p>
             The website design is adapted from <a href="https://grail.cs.washington.edu/projects/sunstage/">SunStage</a> and <a href="https://github.com/hypernerf/hypernerf.github.io">HyperNeRF</a>.</p>
          </div>

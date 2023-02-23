@@ -72,14 +72,15 @@ $(document).ready(function() {
       variableWidth: true
     });
 
-    $('#face-slider').on('input', function(event) {
-      updateScene(this.value, '#focal_grid0', 0, $('#focal-slider-wild').val());
-    });
+    
     for (let i = 1; i < 3; i++) {
       $('#face-slider').on('input', function(event) {
       updateScene(this.value, '#focal_grid'+String(i), i, $('#focal-slider-wild').val());
     });
     }
+    $('#face-slider').on('input', function(event) {
+      updateScene(this.value, '#focal_grid0', 0, $('#focal-slider-wild').val());
+    });
     $('#face-slider-zhao').on('input', function(event) {
       updateSceneZhao(this.value, '#zhao_grid0', 0, $('#focal-slider-zhao').val());
     });
@@ -108,10 +109,11 @@ $(document).ready(function() {
     bulmaSlider.attach();
 
 
-    updateScene($('#face-slider').val(), '#focal_grid0', 0, $('#focal-slider-wild').val());
     for (let i = 1; i < 3; i++) {
       updateScene($('#face-slider').val(), '#focal_grid'+String(i), i, $('#focal-slider-wild').val());
     }
+    updateScene($('#face-slider').val(), '#focal_grid0', 0, $('#focal-slider-wild').val());
+
     for (let i = 0; i < 4; i++) {
       updateSceneCMDP($('#face-slider').val(), '#cmdp_grid'+String(i), i);
     }
@@ -121,10 +123,11 @@ $(document).ready(function() {
 })
 
 window.onresize = function(){
-    updateScene($('#face-slider').val(), '#focal_grid0', 0, $('#focal-slider-wild').val());
     for (let i = 1; i < 3; i++) {
       updateScene($('#face-slider').val(), '#focal_grid'+String(i), i, $('#focal-slider-wild').val());
     }
+    updateScene($('#face-slider').val(), '#focal_grid0', 0, $('#focal-slider-wild').val());
+
     for (let i = 0; i < 4; i++) {
       updateSceneCMDP($('#face-slider').val(), '#cmdp_grid'+String(i), i);
     }
@@ -135,10 +138,11 @@ window.onresize = function(){
 
 
 $(window).on("load", function(){
-    updateScene($('#face-slider').val(), '#focal_grid0', 0, $('#focal-slider-wild').val());
     for (let i = 1; i < 3; i++) {
       updateScene($('#face-slider').val(), '#focal_grid'+String(i), i, $('#focal-slider-wild').val());
     }
+    updateScene($('#face-slider').val(), '#focal_grid0', 0, $('#focal-slider-wild').val());
+
     for (let i = 0; i < 4; i++) {
       updateSceneCMDP($('#face-slider').val(), '#cmdp_grid'+String(i), i);
     }
@@ -159,23 +163,6 @@ Number.prototype.clamp = function(min, max) {
 };
 
 
-function updateImage(value, tag, ID, k) {
-    //$(tag).height(Math.round($(tag).height()))
-    // width = $(tag)[0].getBoundingClientRect().width
-    // naturalwidth= $(tag)[0].naturalWidth;
-    // num_images = naturalwidth/512.0;
-    // console.log(width);
-    // console.log(naturalwidth);
-    // console.log(value);
-    // let left = value * width / num_images;
-    // console.log(left);
-    // $(tag).css('left', -left + 'px');
-    var id_table = id_table_0;
-    var methods_list = ['','_ours_dolly','_fried'];
-    $(tag).attr('src', "./static/images/Wild/"+id_table[ID]+
-      methods_list[k]+'/'+String(value)+".png");
-}
-
 function updateScene(value, tag, k, focal) {
     // 'tp3-CTTSKA', 
     // 'tp4-DOEGEL', 
@@ -184,7 +171,7 @@ function updateScene(value, tag, k, focal) {
     // var id_table_0 = ['ct2-CGSVRN', 'np10-CXQFYN', 'x3-VHQTSI', 'ct1-DIVUYD', 'x44-BOBYEY',  'x26-FVPOQG', 'x28-LBFFPD', 'np1-JYEFHB', 'x25-YFOSCZ', 'np2-ZBDKCJ', 'np7-LBIDIJ', 'tp1-PAFAEH', 'tp0-RWHPIX', 'x17-JVSNDO', 'x36-RIVJAK', 'x20-VNOEMX', 'ct3-GLGJJW', 'np6-ZRSUNQ', 'x39-HLEYJC', 'x19-PFHBBG', 'x16-CWOEGT'];
     var id_table = id_table_0;
     // var methods_list = ['','_ours_dolly','_fried_dolly','_ref']
-    var methods_list = ['','_ours_dolly','_fried'];
+    var methods_list = ['','_ours','_fried'];
     //$(tag).height(Math.round($(tag).height()))
     // width = $(tag)[0].getBoundingClientRect().width
     // naturalwidth= $(tag)[0].naturalWidth;
@@ -194,8 +181,7 @@ function updateScene(value, tag, k, focal) {
     console.log(value);
     // let left = value * width / num_images;
     // console.log(left);
-    $(tag).attr('src', "./static/images/Wild/");
-    $(tag).attr('src', "./static/images/Wild/"+id_table[value]+methods_list[k]+".png");
+    $(tag).attr('src', "./static/images/Wild/"+id_table[value]+methods_list[k]+".jpg");
     // $('#sequence_name').attr('innerHTML', ": "+id_table[value]+"&nbsp;");
     // document.getElementById("sequence_name").innerHTML = id_table[value].slice(0, -2);+"&nbsp;";
     // document.getElementById("frame-idx").innerHTML =  ("00"+String(Number(value)+1)).slice(-2);
@@ -244,7 +230,7 @@ function updateImageWhole(value, tag) {
 function updateSceneZhao(value, tag, k) {
     var id_table = id_table_zhao;
     // var methods_list = ['','_ours_dolly','_fried_dolly','_ref']
-    var methods_list = ['','_ours_dolly','_Fried', '_Zhao']
+    var methods_list = ['','_ours','_Fried', '_Zhao']
     //$(tag).height(Math.round($(tag).height()))
     // width = $(tag)[0].getBoundingClientRect().width
     // naturalwidth= $(tag)[0].naturalWidth;
@@ -254,7 +240,7 @@ function updateSceneZhao(value, tag, k) {
     // console.log(value);
     // let left = value * width / num_images;
     // console.log(left);
-    $(tag).attr('src', "./static/images/Zhao/"+id_table[value]+methods_list[k]+".png");
+    $(tag).attr('src', "./static/images/Zhao/"+id_table[value]+methods_list[k]+".jpg");
     // $('#sequence_name').attr('innerHTML', ": "+id_table[value]+"&nbsp;");
     // document.getElementById("sequence_name").innerHTML = id_table[value].slice(0, -2);+"&nbsp;";
     // document.getElementById("frame-idx").innerHTML =  ("00"+String(Number(value)+1)).slice(-2);
