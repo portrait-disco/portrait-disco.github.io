@@ -66,9 +66,9 @@ $(document).ready(function() {
       infinite: true,
       speed: 500,
       slidesToShow: 1,
-      autoplay: true,
+      autoplay: false,
+      // autoplaySpeed: 3000,
       centerMode: true,
-      autoplaySpeed: 3000,
       variableWidth: true
     });
 
