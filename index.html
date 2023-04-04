@@ -25,6 +25,257 @@
       <meta property="twitter:description" content="">
       <meta property="twitter:image" content="https://portrait-disco.github.io/static/icons/disco_logo.png">
 
+      <style>
+        
+
+
+        button {
+            padding: 0.5em 0.75em;
+            margin: 0.4em 0.4em;
+            min-width: 18ch;
+            text-align: left;
+            background-color: #ddd;
+            color: #333;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+
+            @media screen and (-ms-high-contrast: active) {
+                border: 2px solid currentcolor;
+            }
+        }
+
+        button.on {
+            background-color: #333;
+            color: #eee; /*#bbb;*/
+        }
+
+        p.btncap {
+            margin: 0.4em 0.4em;
+            padding: 0 0.2em;
+            color: #333;
+            border-bottom: 2px solid #333;
+            font-weight: bold;
+            font-style: italic;
+            font-size: 0.8em;
+        }
+
+        .center {
+            text-align: center;
+        }
+
+        .flex {
+            display: flex;
+        }
+
+        .desc {
+            margin: 1.5em 0.4em;
+        }
+
+        .wider_buttons button {
+            display: block;
+            min-width: 20.5ch;
+        }
+
+        .dropbtn {
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f1f1f1;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: black;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {background-color: #ddd;}
+
+        .dropdown:hover .dropdown-content {display: block;}
+
+        .dropdown:hover .dropbtn {background-color: #aaaaaa;}
+
+        button {
+            display: block;
+        }
+
+        /*video {*/
+            /*display: none;*/
+            /*width: 360px;*/
+            /*height: 360px;*/
+            /*margin: auto;*/ /*0.4em;*/
+        /*}*/
+
+/*        video.on {
+            display: block;
+        }*/
+        .shadow {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+    </style>
+
+        <script>
+        class VideoHandler {
+            constructor(n_data, n_methods, databtn_id, vidbtn_id, vidtag_id) {
+                this.n_data = n_data;
+                this.n_methods = n_methods;
+
+                this.databtn_id = databtn_id;
+                this.vidbtn_id = vidbtn_id;
+                this.vidtag_id = vidtag_id;
+
+                this.current_data = 0;
+                this.current_method = 0;
+                this.re10k_data_count = 10;
+                this.method_list = ["3dp", "fried", "wacv", "ours"];
+            }
+
+            get paused() {
+                return document.getElementById(this.vidtag_id + "0").paused;
+            }
+
+            sync_video(e) {
+                if (e === undefined) {
+                    return;
+                }
+                for (let i = 0; i < this.n_methods; i++) {
+                    let v = document.getElementById(this.vidtag_id + i.toString());
+                    if (v != e.currentTarget) {
+                        v.currentTime = e.currentTarget.currentTime;
+                    }
+                }
+            };
+
+            play_video(e) {
+                this.sync_video(e);
+                for (let i = 0; i < this.n_methods; i++) {
+                    document.getElementById(this.vidtag_id + i.toString()).play();
+                }
+            };
+
+            pause_video(e) {
+                for (let i = 0; i < this.n_methods; i++) {
+                    document.getElementById(this.vidtag_id + i.toString()).pause();
+                }
+                this.sync_video(e);
+            };
+
+            // select_method(j) {
+            //     this.current_method = j;
+            //     if (this.current_dat > this.re10k_data_count && j == 3) {
+            //         this.current_method = 0;
+            //     }
+
+            //     for (let i = 0; i < this.n_methods; i++) {
+            //         //if (this.current_data > this.re10k_data_count && i == 3) {
+            //         //    continue;
+            //         //}
+
+            //         let v = document.getElementById(this.vidtag_id + i.toString());
+            //         let b = document.getElementById(this.vidbtn_id + i.toString());
+            //         if (i == j) {
+            //             b.className = "on";
+            //             v.style.display = "block";
+            //             v.addEventListener("play", this);
+            //             v.addEventListener("pause", this);
+            //             v.addEventListener("seeking", this);
+            //             v.addEventListener("seeked", this);
+            //             v.addEventListener("playing", this);
+            //         } else {
+            //             b.className = "";
+            //             v.style.display = "none";
+            //             v.removeEventListener("play", this);
+            //             v.removeEventListener("pause", this);
+            //             v.removeEventListener("seeking", this);
+            //             v.removeEventListener("seeked", this);
+            //             v.removeEventListener("playing", this);
+            //         }
+            //     }
+            // };
+
+            handleEvent(e) {
+                switch (e.type) {
+                    case "play": this.play_video(e); break;
+                    case "pause": this.pause_video(e); break;
+                    case "seeking": this.sync_video(e); break;
+                    case "seeked": this.sync_video(e); break;
+                    case "playing": this.sync_video(e); break;
+                }
+            }
+
+            select_data(j) {
+                this.current_data = j;
+                // if (j > this.re10k_data_count && this.current_method == 3) {
+                //     this.select_method(0);
+                // }
+
+                let autoplay = !this.paused;
+                let data_name = document.getElementById(this.databtn_id + j.toString()).value;
+                for (let i = 0; i < this.n_data; i++) {
+                    document.getElementById(this.databtn_id + i.toString()).className = (i == j ? "on" : "");
+                }
+                for (let i = 0; i < this.n_methods; i++) {
+                    // let video_name = document.getElementById(this.vidbtn_id + i.toString()).value;
+                    let video_name = this.method_list[i];
+
+                    if (j > this.re10k_data_count && i == 3) {
+                        //video_name = "ours";
+                        continue;
+                    }
+                    let v = document.getElementById(this.vidtag_id + i.toString());
+                    v.src = "./static/videos/" + data_name + "_" + video_name + "_True.mp4";
+                }
+                if (autoplay) {
+                    this.play_video();
+                }
+
+                // let se3ds_btn = document.getElementById("cmp_btn3");
+                // if(j > this.re10k_data_count) {
+                //     se3ds_btn.disabled = true;
+                //     se3ds_btn.style.textDecoration = "line-through";
+                // }
+                // else {
+                //     se3ds_btn.disabled = false;
+                //     se3ds_btn.style.textDecoration = "none";
+                // }
+            };
+
+            register() {
+                for (let i = 0; i < this.n_data; i++) {
+                    document.getElementById(this.databtn_id + i.toString()).addEventListener("click", function () { this.select_data(i); }.bind(this, i));
+                }
+
+                // for (let i = 0; i < this.n_methods; i++) {
+                //     document.getElementById(this.vidbtn_id + i.toString()).addEventListener("click", function () { this.select_method(i); }.bind(this, i));
+                // }
+
+                for (let i = 0; i < this.n_methods; i++) {
+                    document.getElementById(this.vidtag_id + i.toString()).muted = true;
+                }
+
+                //this.select_video(0);
+            }
+        }
+
+        window.onload = function () {
+            cmp_handler = new VideoHandler(7, 4, "cmp_data", "cmp_btn", "cmp_vid");
+            cmp_handler.register();
+            cmp_handler.play_video();
+        };
+    </script>
+
+
       <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
          rel="stylesheet">
       <link rel="icon" href="static/icons/selfie-icon.png">
@@ -63,9 +314,34 @@
                <div class="columns is-centered">
                   <div class="column has-text-centered">
                      <div class="column has-text-centered">
-                     <div class="is-size-3 publication-authors">
+<!--                      <div class="is-size-3 publication-authors">
                      <span class="author-block">Anonymous Authors<sup></sup></span>
+                     </div> -->
+                     <div class="is-size-5 publication-authors">
+                        <span class="author-block">
+                        <a href="https://lightchaserx.github.io/">Zhixiang Wang</a><sup><font color="green">&#9752;</font>&#x1f415;</sup></span>
+                        <span class="author-block">
+                        <a href="https://www.cmlab.csie.ntu.edu.tw/~yulunliu/">Yu-Lun Liu</a><sup>&#9881;</sup></span>
+                        <span class="author-block">
+                        <a href="https://jbhuang0604.github.io/">Jia-Bin Huang</a><sup>&#128034;</sup></span>
+                        <span class="author-block">
+                        <a href="http://research.nii.ac.jp/~satoh/index.html">Shin'ichi Satoh</a><sup>&#x1f415;<font color="green">&#9752;</font></sup></span>
+                        <span class="author-block">
+                        <a href="https://sizhuoma.netlify.app/">Sizhuo Ma</a><sup>&#128123;</sup></span>
+                        <span class="author-block">
+                        <a href="https://research.snap.com/team/team-member.html#guru-krishnan">Guru Krishnan</a><sup>&#128123;</sup></span>
+                        <span class="author-block">
+                        <a href="https://jianwang-cmu.github.io/">Jian Wang</a><sup>&#128123;</sup></span>
+                        </span>
                      </div>
+                     <div class="is-size-5 publication-authors">
+                        <span class="author-block"><sup><strong><font color="green">&#9752;</font></strong></sup>University of Tokyo</span>
+                        <span class="author-block"><sup>&#x1f415;</sup>NII</span>
+                        <span class="author-block"><sup>&#9881;</sup>National Yang Ming Chiao Tung University</span>
+                        <span class="author-block"><sup>&#128034;</sup>University of Maryland, College Park</span>
+                        <span class="author-block"><sup>&#128123;</sup>Snap Inc.</span>
+                     </div>
+
                      </div>
           
                      <div class="column has-text-centered">
@@ -163,10 +439,11 @@
       </section>
       <section class="section">
          <div class='container is-max-desktop'>
-            <h3 class="title is-4">More results on cropped faces</h3>
+            <h2 class="title  is-3">More results of cropped faces</h2>
+            <p>We show that our method can process diverse in-the-wild face images</p>
             <!-- <div class="content"> -->
               <!-- <h3 class="title is-4">Correct in-the-wild images</h3> -->
-              <div class="notification hero is-dark">
+              <div class="notification hero is-white">
                <!-- <p>Our collected</p> -->
                <!-- <div class="row" id=""> -->
                   <div class="columns">
@@ -462,7 +739,7 @@
                            </video>
                         </div>
                      </div>
-                     <p class="has-text-centered">Correct in-the-wild distorted images collected by us and by <a href="https://github.com/bearjoy730/Learning-Perspective-Undistortion-of-Portraits">Zhao+</a></p>
+                     <p class="has-text-centered">Correct in-the-wild distorted images collected by us and by [Zhao+, ICCV'19]</p>
                   </div>
               <!-- </div> -->
             <!-- </div> end of content -->
@@ -481,13 +758,13 @@
                   <h2 class="title is-3">Abstract</h2>
                   <div class="content has-text-justified">
                      <p>
-                        Close-up facial images captured at close distances often suffer from perspective distortion, resulting in exaggerated facial features and unnatural/unattractive appearances. 
+                       Close-up facial images captured at short distances often suffer from perspective distortion, resulting in exaggerated facial features and unnatural/unattractive appearances. 
 We propose a simple yet effective method for correcting perspective distortions in a single close-up face.
 We first perform GAN inversion using a perspective-distorted input facial image by jointly optimizing the camera intrinsic/extrinsic parameters and face latent code. 
-To address the ambiguity of joint optimization, we develop focal length reparametrization, optimization scheduling, and geometric regularization. 
-Re-rendering the portrait at a proper focal length and camera distance effectively corrects these distortions and produces more natural-looking results. 
-Our experiments show that our method compares favorably against previous approaches regarding visual quality. 
-We showcase numerous examples validating the applicability of our method on portrait photos in the wild.
+To address the ambiguity of joint optimization, we develop focal length reparametrization, optimization scheduling, starting from a short distance, and geometric regularization. 
+Re-rendering the portrait at a proper focal length and camera distance effectively corrects perspective distortions and produces more natural-looking results. 
+Our experiments show that our method compares favorably against previous approaches qualitatively and quantitatively.
+We showcase numerous examples validating the applicability of our method on portrait photos in the wild. 
                   </div>
                </div>
             </div>
@@ -497,7 +774,7 @@ We showcase numerous examples validating the applicability of our method on port
 
       <section class="section">
          <div class='container is-max-desktop'>
-        <h3 class="title is-4">Method overview</h3> 
+        <h2 class="title is-3">Method overview</h2> 
         <div class="hero">
             <div class="container">
             <div class="content">
@@ -509,7 +786,75 @@ We showcase numerous examples validating the applicability of our method on port
 
 <section class="section">
          <div class='container is-max-desktop'>
-            <h3 class="title is-4">Comparisons</h3>
+            <h2 class="title is-3">Visual Comparisons</h2>
+
+            <div class="container is-max-desktop content">
+        <!-- <h2 class="title is-3">Comparisons</h2> -->
+        <div class="flex">
+            <div class="dropdown">
+                <button class="dropbtn">Sequence</button>
+                <div class="dropdown-content">
+                    <button id="cmp_data0" value="tp0-MSBXWE" class="on">Man 1</button>
+                    <button id="cmp_data1" value="np9-EYBFBI">Woman 1</button>
+                    <button id="cmp_data2" value="x5-XDTZRN">Two Man</button>
+                    <button id="cmp_data3" value="tp4-DOEGEL">Girl 1</button>
+                    <button id="cmp_data4" value="cghf1-IDDBMZ">Man 2</button>
+                    <button id="cmp_data5" value="newf2-ALEDWI">Girl 2</button>
+                    <button id="cmp_data6" value="np16-SPKCNT">Woman 2</button>
+                </div>
+            </div>
+<!--             <div class="dropdown">
+                <button class="dropbtn">Method</button>
+                <div class="dropdown-content">
+                    <button id="cmp_btn0" value="ours" class="on">Ours</button>
+                    <button id="cmp_btn1" value="geogpt">GeoGPT</button>
+                    <button id="cmp_btn2" value="lor">LoR</button>
+                    <button id="cmp_btn3" value="se3ds">SE3DS</button>
+                    <button id="cmp_btn4" value="gt">Ground truth</button>
+                </div>
+            </div> -->
+        </div>
+        <center>
+         <div class="columns">
+            <div class="column is-half-desktop is-half-tablet">
+               <video id="cmp_vid0" controls loop autoplay muted class="on"  height="100%">
+            <source src="./static/videos/tp0-MSBXWE_3dp_True.mp4" type="video/mp4"/>
+        </video>
+        <center>3D Photo [Shih+, CVPR'20]</center>
+     </div>
+     <div class="column is-half-desktop is-half-tablet">
+        <video id="cmp_vid1" controls loop autoplay muted class="on"  height="100%">
+            <source src="./static/videos/tp0-MSBXWE_fried_True.mp4" type="video/mp4" autoplay muted/>
+        </video>
+        <center>[Fried+, TOG'16]</center>
+     </div>
+  </div>
+  <div class="columns">
+     <div class="column is-half-desktop is-half-tablet">
+        <video id="cmp_vid2" controls loop autoplay muted class="on"  height="100%">
+            <source src="./static/videos/tp0-MSBXWE_wacv_True.mp4" type="video/mp4" autoplay muted/>
+        </video>
+        <center>[Ko+, WACV'23] + [Tzaban+, SIGGRAPH Asia'22]</center>
+     </div>
+     <div class="column is-half-desktop is-half-tablet">
+        <video id="cmp_vid3" controls loop autoplay muted class="on"  height="100%">
+            <source src="./static/videos/tp0-MSBXWE_ours_True.mp4" type="video/mp4" autoplay muted/>
+        </video>
+        <center>Ours</center>
+     </div>
+        </center>
+        <!-- <br>
+        <p>
+            We show the comparisons between our method, 
+            <a href="https://compvis.github.io/geometry-free-view-synthesis/">GeoGPT</a>, 
+            <a href="https://xrenaa.github.io/look-outside-room/">LoR</a>, and
+            <a href="https://github.com/google-research/se3ds">SE3DS</a> on the 
+            <a href="https://google.github.io/realestate10k/">RealEstate10K</a> 
+            and <a href="https://niessner.github.io/Matterport/">MatterPort3D</a> datasets.
+        </p> -->
+    </div>
+    <br>
+
             <div class="notification hero is-light">
               <div class="">
             <div class="content">
@@ -521,11 +866,7 @@ We showcase numerous examples validating the applicability of our method on port
                            <img id="focal_grid0" fetchpriority="low" style="width: 100%" src="./static/images/"/>
                         </div>
                      </div>
-                     <h5>
-                        <strong>
                            <center>Input</center>
-                        </strong>
-                     </h5>
                   </div>
                   <div class="column is-one-quarter-desktop is-one-quarter-tablet is-one-quarter-mobile has-text-centered">
                      <div class="hyper-grid-wrapper">
@@ -533,11 +874,9 @@ We showcase numerous examples validating the applicability of our method on port
                            <img id="focal_grid1" fetchpriority="low" style="width: 5000%" src="./static/images/"/>
                         </div>
                      </div>
-                     <h5>
-                        <strong>
+                     
                            <center>Ours</center>
-                        </strong>
-                     </h5>
+                     
                   </div>
                   <div class="column is-one-quarter-desktop is-one-quarter-tablet is-one-quarter-mobile has-text-centered">
                      <div class="hyper-grid-wrapper">
@@ -545,11 +884,19 @@ We showcase numerous examples validating the applicability of our method on port
                            <img id="focal_grid2" fetchpriority="low" style="width: 5000%" src="./static/"/>
                         </div>
                      </div>
-                     <h5>
-                        <strong>
-                           <center><sup>#</sup>Fried+</center>
-                        </strong>
-                     </h5>
+                     
+                           <center><sup>#</sup>[Fried+, TOG'16]</center>
+                     
+                  </div>
+                  <div class="column is-one-quarter-desktop is-one-quarter-tablet is-one-quarter-mobile has-text-centered">
+                     <div class="hyper-grid-wrapper">
+                        <div class="hyper-grid-rgb">
+                           <img id="focal_grid3" fetchpriority="low" style="width: 5000%" src="./static/"/>
+                        </div>
+                     </div>
+                     
+                           <center>[Ko+, WACV'23]</center>
+                     
                   </div>
                </div>
                <div class="columns is-centered is-mobile is-vcentered">
@@ -600,7 +947,7 @@ We showcase numerous examples validating the applicability of our method on port
           <div class="notification hero is-light">
             <div class="">
             <div class="content">
-              <p class="has-text-centered">Visual comparisons on images collected by <a href="https://github.com/bearjoy730/Learning-Perspective-Undistortion-of-Portraits">Zhao+</a></p>
+              <p class="has-text-centered">Visual comparisons on images collected by [Zhao+, ICCV'19]</p>
               <div class="columns is-centered is-mobile">
       <div class="column is-one-quarter-desktop is-one-quarter-tablet is-half-mobile has-text-centered">
         <div class="hyper-grid-wrapper">
@@ -608,7 +955,7 @@ We showcase numerous examples validating the applicability of our method on port
             <img id="zhao_grid0" style="width: 100%" src="./static/images/Zhao/x8-NYGSLL.jpg"/>
           </div>
         </div>
-          <h5><strong><center>Input</center></strong></h5>
+          <center>Input</center>
       </div>
       <div class="column is-one-quarter-desktop is-one-quarter-tablet is-half-mobile has-text-centered">
         <div class="hyper-grid-wrapper">
@@ -616,7 +963,7 @@ We showcase numerous examples validating the applicability of our method on port
             <img id="zhao_grid1" style="width: 5000%" src="./static/images/Zhao/x8-NYGSLL_ours.jpg"/>
           </div>
         </div>
-        <h5><strong><center>Ours</center></strong></h5>
+        <center>Ours</center>
       </div>
       <div class="column is-one-quarter-desktop is-one-quarter-tablet is-half-mobile has-text-centered">
         <div class="hyper-grid-wrapper">
@@ -624,7 +971,7 @@ We showcase numerous examples validating the applicability of our method on port
             <img id="zhao_grid2" style="width: 100%" src="./static/images/Zhao/x8-NYGSLL_Fried.jpg"/>
           </div>
         </div>
-        <h5><strong><center>Fried+</center></strong></h5>
+        <center>[Fried+, TOG'16]</center>
       </div>
       <div class="column is-one-quarter-desktop is-one-quarter-tablet is-half-mobile has-text-centered">
         <div class="hyper-grid-wrapper">
@@ -632,7 +979,7 @@ We showcase numerous examples validating the applicability of our method on port
             <img id="zhao_grid3" style="width: 100%" src="./static/images/Zhao/x8-NYGSLL_Zhao.jpg"/>
           </div>
         </div>
-        <h5><strong><center>Zhao+</center></strong></h5>
+        <center>[Zhao+, ICCV'19]</center>
       </div>
     </div>
     <div class="columns is-centered is-mobile is-vcentered">
@@ -669,7 +1016,7 @@ We showcase numerous examples validating the applicability of our method on port
           <div class="notification hero is-light">
             <div class="">
             <div class="content">
-              <p class="has-text-centered">Visual comparisons on <a href="">CMDP</a></p>
+              <p class="has-text-centered">Visual comparisons on <a href="https://data.caltech.edu/records/n5vnm-mqr05">CMDP</a> used in [Fried+, TOG'16]</p>
               <div class="columns is-centered is-mobile">
       <div class="column is-one-quarter-desktop is-one-quarter-tablet is-half-mobile has-text-centered">
         <div class="hyper-grid-wrapper">
@@ -677,7 +1024,7 @@ We showcase numerous examples validating the applicability of our method on port
             <img id="cmdp_grid0" style="width: 100%" src="./static/images/CMDP/7FNY-060329_2.png"/>
           </div>
         </div>
-          <h5><strong><center>Input</center></strong></h5>
+          <center>Input</center>
       </div>
       <div class="column is-one-quarter-desktop is-one-quarter-tablet is-half-mobile has-text-centered">
         <div class="hyper-grid-wrapper">
@@ -685,7 +1032,7 @@ We showcase numerous examples validating the applicability of our method on port
             <img id="cmdp_grid1" style="width: 100%" src="./static/images/CMDP/7FNY-060329_2_fried.png"/>
           </div>
         </div>
-        <h5><strong><center>Fried+</center></strong></h5>
+        <center>[Fried+, TOG'16]</center>
       </div>
       <!-- <div class="column is-one-quarter-desktop is-one-quarter-tablet is-half-mobile has-text-centered">
         <div class="hyper-grid-wrapper">
@@ -701,7 +1048,7 @@ We showcase numerous examples validating the applicability of our method on port
             <img id="cmdp_grid2" style="width: 100%" src="./static/images/CMDP/7FNY-060329_2_ours.png"/>
           </div>
         </div>
-        <h5><strong><center>Ours</center></strong></h5>
+        <center>Ours</center>
       </div>
       <div class="column is-one-quarter-desktop is-one-quarter-tablet is-half-mobile has-text-centered">
         <div class="hyper-grid-wrapper">
@@ -709,7 +1056,7 @@ We showcase numerous examples validating the applicability of our method on port
             <img id="cmdp_grid3" style="width: 100%" src="./static/images/CMDP/7FNY-060329_2_ref16.png"/>
           </div>
         </div>
-        <h5><strong><center>Reference</center></strong></h5>
+        <center>Reference</center>
       </div>
     </div>
     <div class="columns is-centered is-mobile is-vcentered">
@@ -729,11 +1076,11 @@ We showcase numerous examples validating the applicability of our method on port
   </div>
             </div> <!-- end of content -->
           </div> <!-- end of hero -->
-          <hr>
-          <h3 class="title is-4">Quantitative comparisons</h3>
-         <p style="font-size: 13px">We conduct comparisons on <a href="https://data.caltech.edu/records/n5vnm-mqr05">CMDP</a>. 
+          <!-- <hr> -->
+          <h2 class="title is-3">Quantitative comparisons</h2>
+         <p style="font-size: 15px">We conduct comparisons on <a href="https://data.caltech.edu/records/n5vnm-mqr05">CMDP</a>. 
 <!-- Lower is better for landmark error and LIPIPS; Higher is better for PSNR and SSIM. -->
-Results of Fried+ is borrowed from their <a href="https://www.ohadf.com/projects/perspective-portraits/results/view_results.html">demo page</a>. <sup>#</sup>Fried+ denotes our re-implementation of Fried+. </p>
+Results of [Fried+, TOG'16] is borrowed from their <a href="https://www.ohadf.com/projects/perspective-portraits/results/view_results.html">demo</a>. -[Fried+, TOG'16] denotes our re-implementation of [Fried+, TOG'16]. </p>
           <div class="notification hero is-white">
             <div class="">
             <div class="content">
@@ -753,12 +1100,14 @@ Results of Fried+ is borrowed from their <a href="https://www.ohadf.com/projects
          </div>
       <!-- </section> -->
 
-      <hr>
+      <!-- <hr> -->
       
 
 <!-- <section class="section" id="abl"> -->
    <!-- <div class='container is-max-desktop'> -->
-   <h3 class="title is-4">Ablation study</h3>
+   <h2 class="title is-3">Ablation study</h2>
+      <p>Ablation study of our proposed perspective-aware 3D GAN inversion</p>
+
    <div class="notification hero is-white">
    <div class="">
    <div class="content">
@@ -769,11 +1118,9 @@ Results of Fried+ is borrowed from their <a href="https://www.ohadf.com/projects
                            <img id="" style="width: 100%" fetchpriority="low" src="./static/images/ablation/x26-FVPOQG_input.png"/>
                         </div>
                      </div>
-                     <h5>
-                        <strong>
+               
                            <center>Input</center>
-                        </strong>
-                     </h5>
+
                   </div>
                   <div class="column is-one-quarter-desktop is-one-quarter-tablet is-one-quarter-mobile has-text-centered">
                      <div class="hyper-grid-wrapper">
@@ -781,11 +1128,7 @@ Results of Fried+ is borrowed from their <a href="https://www.ohadf.com/projects
                            <img id="" style="width: 100%" fetchpriority="low" src="./static/images/ablation/x26-FVPOQG_wo_allx8.png"/ >
                         </div>
                      </div>
-                     <h5>
-                        <strong>
                            <center>w/o all</center>
-                        </strong>
-                     </h5>
                   </div>
                   <div class="column is-one-quarter-desktop is-one-quarter-tablet is-one-quarter-mobile has-text-centered">
                      <div class="hyper-grid-wrapper">
@@ -793,11 +1136,7 @@ Results of Fried+ is borrowed from their <a href="https://www.ohadf.com/projects
                            <img id="" style="width: 100%" fetchpriority="low" src="./static/images/ablation/x26-FVPOQG_wo_all-cam_optx8.png"/>
                         </div>
                      </div>
-                     <h5>
-                        <strong>
                            <center>w/o all +camera opt</center>
-                        </strong>
-                     </h5>
                   </div>
                   <div class="column is-one-quarter-desktop is-one-quarter-tablet is-one-quarter-mobile has-text-centered">
                      <div class="hyper-grid-wrapper">
@@ -805,11 +1144,7 @@ Results of Fried+ is borrowed from their <a href="https://www.ohadf.com/projects
                            <img id="" style="width: 100%" fetchpriority="low" src="./static/images/ablation/x26-FVPOQG_wo_cam-initx8.png"/>
                         </div>
                      </div>
-                     <h5>
-                        <strong>
                            <center>w/o distance init</center>
-                        </strong>
-                     </h5>
                   </div>
                </div>
       <div class="columns is-centered is-mobile">
@@ -819,11 +1154,7 @@ Results of Fried+ is borrowed from their <a href="https://www.ohadf.com/projects
                            <img id="" style="width: 100%" fetchpriority="low" src="./static/images/ablation/x26-FVPOQG_wo_cam-schedulingx8.png"/>
                         </div>
                      </div>
-                     <h5>
-                        <strong>
                            <center>w/o scheduling</center>
-                        </strong>
-                     </h5>
                   </div>
                   <div class="column is-one-quarter-desktop is-one-quarter-tablet is-one-quarter-mobile has-text-centered">
                      <div class="hyper-grid-wrapper">
@@ -831,11 +1162,7 @@ Results of Fried+ is borrowed from their <a href="https://www.ohadf.com/projects
                            <img id="" style="width: 100%" fetchpriority="low" src="./static/images/ablation/x26-FVPOQG_wo_relate-camx8.png"/>
                         </div>
                      </div>
-                     <h5>
-                        <strong>
                            <center>w/o reparameterization</center>
-                        </strong>
-                     </h5>
                   </div>
                   <div class="column is-one-quarter-desktop is-one-quarter-tablet is-one-quarter-mobile has-text-centered">
                      <div class="hyper-grid-wrapper">
@@ -843,11 +1170,7 @@ Results of Fried+ is borrowed from their <a href="https://www.ohadf.com/projects
                            <img id="" style="width: 100%" fetchpriority="low" src="./static/images/ablation/x26-FVPOQG_oursx8.png"/>
                         </div>
                      </div>
-                     <h5>
-                        <strong>
                            <center>Ours</center>
-                        </strong>
-                     </h5>
                   </div>
                   <div class="column is-one-quarter-desktop is-one-quarter-tablet is-one-quarter-mobile has-text-centered">
                      <div class="hyper-grid-wrapper">
@@ -855,31 +1178,113 @@ Results of Fried+ is borrowed from their <a href="https://www.ohadf.com/projects
                            <img id="" style="width: 100%" fetchpriority="low" src="./static/images/ablation/x26-FVPOQG_reference.png"/>
                         </div>
                      </div>
-                     <h5>
-                        <strong>
                            <center>Reference</center>
-                        </strong>
-                     </h5>
                   </div>
                </div>
    </div>
    </div>
    </div>
+
+      <p>Ablation study of our pipeline</p>
+
+   <div class="notification hero is-white">
+   <div class="">
+   <div class="content">
+      <div class="columns is-centered is-mobile">
+                  <div class="column is-one-third-desktop is-one-third-tablet is-half-mobile has-text-centered">
+                     
+                     <div class="">
+                        <div class="">
+                           <img id="" style="width: 100%" fetchpriority="low" src="./static/images/ablation/np7-LBIDIJ_input.jpg"/>
+                        </div>
+                     </div>
+                     <center>Input</center>
+                  </div>
+
+                  <div class="column is-one-third-desktop is-one-third-tablet is-half-mobile has-text-centered">
+                     <div class="">
+                        <div class="">
+                           <img id="" style="width: 100%" fetchpriority="low" src="./static/images/ablation/np7-LBIDIJ_paste.jpg"/>
+                        </div>
+                     </div>
+                     <center>Direct paste</center>
+
+                  </div>
+
+                  <div class="column is-one-third-desktop is-one-third-tablet is-half-mobile has-text-centered">
+                     <div class="">
+                        <div class="">
+                           <img id="" style="width: 100%" fetchpriority="low" src="./static/images/ablation/np7-LBIDIJ_paste_tune.jpg"/>
+                        </div>
+                     </div>
+                     <center>Stitch tuning</center>
+
+                  </div>
+
+               </div>
+                <div class="columns is-centered is-mobile">
+                  <div class="column is-one-third-desktop is-one-third-tablet is-half-mobile has-text-centered">
+                     <div class="">
+                        <div class="">
+                           <img id="" style="width: 100%" fetchpriority="low" src="./static/images/ablation/np7-LBIDIJ_3dpx.jpg"/>
+                        </div>
+                     </div>
+                     <center>Background warping (BW)</center>
+
+                  </div>
+
+                  <div class="column is-one-third-desktop is-one-third-tablet is-half-mobile has-text-centered">
+                     <div class="">
+                        <div class="">
+                           <img id="" style="width: 100%" fetchpriority="low" src="./static/images/ablation/np7-LBIDIJ_warp_paste.jpg"/>
+                        </div>
+                     </div>
+                     <center>BW+direct paste</center>
+
+                  </div>
+
+                  <div class="column is-one-third-desktop is-one-third-tablet is-half-mobile has-text-centered">
+                     <div class="">
+                        <div class="">
+                           <img id="" style="width: 100%" fetchpriority="low" src="./static/images/ablation/np7-LBIDIJ_oursx8.jpg"/>
+                        </div>
+                     </div>
+                     <center>Ours</center>
+
+                  </div>
+                 
+               </div>
    </div>
+   </div>
+   </div>
+   
+   
 
 </section>
 
+
 <section class="section" id="Ref">
    <div class="container content is-max-desktop">
-      <h2 class="title">Reference</h2>
+      <h2 class="title is-size-3">Reference</h2>
        <ol style="font-size: 14px">
-          <li> Yajie Zhao, Zeng Huang, Tianye Li, Weikai Chen, Chloe LeGendre, Xinglei Ren, Jun Xing, Ari Shapiro, and Hao Li, Learning Perspective Undistortion of Portraits, ICCV, 2019.
-          </li>
-          <li> Ohad Fried, Eli Shechtman,
+         <li> <B>[Fried+, TOG'16]</B> Ohad Fried, Eli Shechtman,
 Dan B Goldman, and Adam Finkelstein, Perspective-aware Manipulation of Portrait Photos, ACM TOG (Proc. SIGGRAPH), 2016.
+          </li>
+          <li> <B>[Zhao+, ICCV'19]</B> Yajie Zhao, Zeng Huang, Tianye Li, Weikai Chen, Chloe LeGendre, Xinglei Ren, Jun Xing, Ari Shapiro, and Hao Li, Learning Perspective Undistortion of Portraits, ICCV, 2019.
           </li>
           <li>
             Burgos-Artizzu, Xavier, Ronchi, Matteo Ruggero, & Perona, Pietro (2022). Caltech Multi-Distance Portraits (CMDP) (1.0) [Data set]. CaltechDATA. https://doi.org/10.22002/D1.20110
+          </li>
+          <li>
+            <B>[Shih+, CVPR'20]</B> Meng-Li Shih, Shih-Yang Su, Johannes Kopf, Jia-Bin Huang, 3D Photography using Context-aware Layered Depth Inpainting, CVPR, 2020.
+          </li>
+          <li>
+            <B>[Ko+, WACV'23]</B> Jaehoon Ko, Kyusun Cho, Daewon Choi, Kwangrok Ryoo, Seungryong Kim,
+3D GAN Inversion with Pose Optimization, WACV, 2023.
+          </li>
+          <li>
+            <B>[Tzaban+, SIGGRAPH Asia'22]</B> Rotem Tzaban, Ron Mokady, Rinon Gal, Amit Bermano, Daniel Cohen-Or,
+Stitch it in Time: GAN-Based Facial Editing of Real Videos, SIGGRAPH Asia, 2022.
           </li>
           <ol>    
    </div>
@@ -891,8 +1296,7 @@ Dan B Goldman, and Adam Finkelstein, Perspective-aware Manipulation of Portrait 
       <section class="section" id="acknowledgements">
          <div class="container content is-max-desktop">
             <h2 class="title">Acknowledgements</h2>
-            <p> Special thanks to <a href="https://www.yajie-zhao.com/">Yajie Zhao</a> for providing their results and data; <a href="https://www.ohadf.com/">Ohad Fried</a> for sharing their results on web.</p> 
-            <p>Our collected in-the-wild images are from internet under <a href="https://creativecommons.org/">common creative</a>. Sources are <a href="">here</a>.</p>
+            <p> Special thanks to <a href="https://www.yajie-zhao.com/">Yajie Zhao</a> for providing their results and data; <a href="https://www.ohadf.com/">Ohad Fried</a> for sharing their results on web. Our collected in-the-wild images are from internet under <a href="https://creativecommons.org/">common creative</a>. Sources are <a href="">here</a>.</p>
             <p>
             The website design is adapted from <a href="https://grail.cs.washington.edu/projects/sunstage/">SunStage</a> and <a href="https://github.com/hypernerf/hypernerf.github.io">HyperNeRF</a>.</p>
          </div>

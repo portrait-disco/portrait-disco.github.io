@@ -73,7 +73,7 @@ $(document).ready(function() {
     });
 
     
-    for (let i = 1; i < 3; i++) {
+    for (let i = 1; i < 4; i++) {
       $('#face-slider').on('input', function(event) {
       updateScene(this.value, '#focal_grid'+String(i), i, $('#focal-slider-wild').val());
     });
@@ -102,6 +102,9 @@ $(document).ready(function() {
     $('#focal-slider-wild').on('input', function(event) {
       updateImageWhole($('#focal-slider-wild').val(), '#focal_grid2');
     });
+    $('#focal-slider-wild').on('input', function(event) {
+      updateImageWhole($('#focal-slider-wild').val(), '#focal_grid3');
+    });
     $('#focal-slider-zhao').on('input', function(event) {
       updateImageWhole($('#focal-slider-zhao').val(), '#zhao_grid1');
     });
@@ -109,7 +112,7 @@ $(document).ready(function() {
     bulmaSlider.attach();
 
 
-    for (let i = 1; i < 3; i++) {
+    for (let i = 1; i < 4; i++) {
       updateScene($('#face-slider').val(), '#focal_grid'+String(i), i, $('#focal-slider-wild').val());
     }
     updateScene($('#face-slider').val(), '#focal_grid0', 0, $('#focal-slider-wild').val());
@@ -123,7 +126,7 @@ $(document).ready(function() {
 })
 
 window.onresize = function(){
-    for (let i = 1; i < 3; i++) {
+    for (let i = 1; i < 4; i++) {
       updateScene($('#face-slider').val(), '#focal_grid'+String(i), i, $('#focal-slider-wild').val());
     }
     updateScene($('#face-slider').val(), '#focal_grid0', 0, $('#focal-slider-wild').val());
@@ -138,7 +141,7 @@ window.onresize = function(){
 
 
 $(window).on("load", function(){
-    for (let i = 1; i < 3; i++) {
+    for (let i = 1; i < 4; i++) {
       updateScene($('#face-slider').val(), '#focal_grid'+String(i), i, $('#focal-slider-wild').val());
     }
     updateScene($('#face-slider').val(), '#focal_grid0', 0, $('#focal-slider-wild').val());
@@ -148,6 +151,8 @@ $(window).on("load", function(){
     }
     updateImageWhole($('#focal-slider-wild').val(), '#focal_grid1');
     updateImageWhole($('#focal-slider-wild').val(), '#focal_grid2');
+    updateImageWhole($('#focal-slider-wild').val(), '#focal_grid3');
+
     updateImageWhole($('#focal-slider-zhao').val(), '#zhao_grid1');
 
     // Reset gifs once everything is loaded to synchronize playback.
@@ -171,7 +176,7 @@ function updateScene(value, tag, k, focal) {
     // var id_table_0 = ['ct2-CGSVRN', 'np10-CXQFYN', 'x3-VHQTSI', 'ct1-DIVUYD', 'x44-BOBYEY',  'x26-FVPOQG', 'x28-LBFFPD', 'np1-JYEFHB', 'x25-YFOSCZ', 'np2-ZBDKCJ', 'np7-LBIDIJ', 'tp1-PAFAEH', 'tp0-RWHPIX', 'x17-JVSNDO', 'x36-RIVJAK', 'x20-VNOEMX', 'ct3-GLGJJW', 'np6-ZRSUNQ', 'x39-HLEYJC', 'x19-PFHBBG', 'x16-CWOEGT'];
     var id_table = id_table_0;
     // var methods_list = ['','_ours_dolly','_fried_dolly','_ref']
-    var methods_list = ['','_ours','_fried'];
+    var methods_list = ['','_ours','_fried', '_wacv_dolly'];
     //$(tag).height(Math.round($(tag).height()))
     // width = $(tag)[0].getBoundingClientRect().width
     // naturalwidth= $(tag)[0].naturalWidth;
@@ -206,7 +211,7 @@ function updateSceneCMDP(value, tag, k) {
     // let left = value * width / num_images;
     // console.log(left);
     $(tag).attr('src', "./static/images/CMDP/");
-    $(tag).attr('src', "./static/images/CMDP/"+id_table[value]+methods_list[k]+".png");
+    $(tag).attr('src', "./static/images/CMDP/"+id_table[value]+methods_list[k]+".jpg");
     // $('#sequence_name').attr('innerHTML', ": "+id_table[value]+"&nbsp;");
     // document.getElementById("sequence_name").innerHTML = id_table[value].slice(0, -2);+"&nbsp;";
     // document.getElementById("frame-idx").innerHTML =  ("00"+String(Number(value)+1)).slice(-2);
