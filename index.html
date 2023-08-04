@@ -759,12 +759,13 @@
                   <div class="content has-text-justified">
                      <p>
                        Close-up facial images captured at short distances often suffer from perspective distortion, resulting in exaggerated facial features and unnatural/unattractive appearances. 
-We propose a simple yet effective method for correcting perspective distortions in a single close-up face.
-We first perform GAN inversion using a perspective-distorted input facial image by jointly optimizing the camera intrinsic/extrinsic parameters and face latent code. 
-To address the ambiguity of joint optimization, we develop focal length reparametrization, optimization scheduling, starting from a short distance, and geometric regularization. 
-Re-rendering the portrait at a proper focal length and camera distance effectively corrects perspective distortions and produces more natural-looking results. 
-Our experiments show that our method compares favorably against previous approaches qualitatively and quantitatively.
-We showcase numerous examples validating the applicability of our method on portrait photos in the wild. 
+                       We propose a simple yet effective method for correcting perspective distortions in a single close-up face. 
+                       We first perform GAN inversion using a perspective-distorted input facial image by jointly optimizing the camera intrinsic/extrinsic parameters and face latent code. 
+                       To address the ambiguity of joint optimization, we develop starting from a short distance, optimization scheduling, reparametrizations, and geometric regularization. 
+                       Re-rendering the portrait at a proper focal length and camera distance effectively corrects perspective distortions and produces more natural-looking results. 
+                       Our experiments show that our method compares favorably against previous approaches qualitatively and quantitatively. 
+                       We showcase numerous examples validating the applicability of our method on in-the-wild portrait photos. 
+                       We will release our code and the evaluation protocol to facilitate future work.
                   </div>
                </div>
             </div>
